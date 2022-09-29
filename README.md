@@ -15,7 +15,7 @@
             <a href="https://scholar.google.com/citations?hl=en&user=fn-lMpMAAAAJ">Milad Ramezani<sup>1</sup></a> &nbsp;&nbsp;&nbsp;
             <a href="https://scholar.google.com/citations?user=v8-lMdUAAAAJ&hl=en">Sridha Sridharan<sup>2</sup></a> &nbsp;&nbsp;&nbsp;
             <a href="https://scholar.google.com.au/citations?user=VpaJsNQAAAAJ&hl=en">Clinton Fookes<sup>2</sup></a> &nbsp;&nbsp;&nbsp;
-            <a href="https://scholar.google.com.au/citations?user=QAVcuWUAAAAJ&hl=en">Peyman Moghadam<sup>1,2</sup></a> &nbsp;&nbsp;&nbsp; </p>
+            <a href="https://scholar.google.com.au/citations?user=QAVcuWUAAAAJ&hl=en">Peyman Moghadam<sup>1,2</sup></a> &nbsp;&nbsp;&nbsp; </strong></p>
             <p><sup>*</sup> Equal Contribution
             <br><sup>1</sup>Robotics and Autonomous Systems Group, DATA61, CSIRO, Australia.  E-mails: <span style="font-family:courier;"> firstname.lastname@data61.csiro.au</span>
             <br><sup>2</sup>School of Electrical Engineering and Robotics, Queensland University of Technology (QUT), Australia.  E-mails: <span style="font-family:courier;"> {s.sridharan,c.fookes}@qut.edu.au</span>
@@ -82,7 +82,7 @@
          <div align="center">
             <img  src="images/sequences_table.png" height="200"/>
          </div>
-         <p>Per-Sequence Information for the Wild-Places Dataset.  We collect a total of eight lidar sequences in two environments over the span of fourteen months for a total of 35.33km traversed distance and approximately 67K point cloud submaps.</p>
+         Per-Sequence Information for the Wild-Places Dataset.  We collect a total of eight lidar sequences in two environments over the span of fourteen months for a total of 35.33km traversed distance and approximately 67K point cloud submaps.
          <!-- 
             ###################
             SECTION 5 - Benchmarking
