@@ -121,7 +121,15 @@
                </tbody>
             </table>
          </div>
-         The links in the above table will allow you to download checkpoints for our trained models on the TransLoc3D, MinkLoc3Dv2 and LoGG3D-Net models trained in the paper associated with this dataset release.
+         The links in the above table will allow you to download checkpoints for our trained models on the TransLoc3D, MinkLoc3Dv2 and LoGG3D-Net architectures trained in the paper associated with this dataset release.
+         <h4 id="62-Dataset"><a class="anchor" name="62-Dataset" href="#62-dataset"><span class="octicon octicon-link">
+         </span></a>6.2 Dataset Download</h4>
+         Our dataset can be downloaded through <a href="https://data.csiro.au/"> The CSIRO Data Access Portal</a>.  Detailed instructions for downloading the dataset can be found in the README.pdf file provided on the data access portal page.
+         <h4 id="63-License"><a class="anchor" name="63-Dataset" href="#63-dataset"><span class="octicon octicon-link">
+         </span></a>6.3 License</h4>
+         <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+         <img src="images/license.png"></a>
+         <br>We release this dataset under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"> Creative Commons Attribution Noncommercial-Share Alike 4.0 Licence </a>
         <!-- 
             ###################
             END OF OUR CONTENT
