@@ -36,10 +36,10 @@
           -->
          <h2 id="2-paper"><a class="anchor" name="2-paper" href="#2-paper"><span class="octicon octicon-link"></span></a>2. Paper</h2>
          <div align="center">
-            <a href="https://arxiv.org/abs/2102.12808">
+            <a href="https://arxiv.org/">
             <img  src="images/frontpage.png" height="440" width="340" />
             </a>   
-            <p><a href="https://arxiv.org/abs/2102.12808"><strong>Paper on arXiv =&gt; "Wild-Places: A Large-Scale Dataset for Lidar Place Recognition in Unstructured Natural Environments"</strong></a></p>
+            <p><a href="https://arxiv.org/"><strong>Paper on arXiv =&gt; "Wild-Places: A Large-Scale Dataset for Lidar Place Recognition in Unstructured Natural Environments"</strong></a></p>
          </div>
          <!-- 
             ###################
@@ -70,7 +70,8 @@
             SECTION 4 - Dataset Information
             ###################
           -->
-        <h2 id="4-Dataset"><a class="anchor" name="3-Wild-Places" href="#4-DATASET"><span class="octicon octicon-link"></span></a>4. Dataset</h2>
+        <h2 id="4-Dataset"><a class="anchor" name="3-Wild-Places" href="#4-DATASET"><span class="octicon octicon-link">
+        </span></a>4. Dataset Information</h2>
         <h4 id="41-Comparison"><a class="anchor" name="41-Comparison" href="#41-Comparison"><span class="octicon octicon-link">
          </span></a>4.1 Comparison</h4>
          <div align="center">
@@ -117,15 +118,15 @@
                <tbody>
                   <tr>
                      <td class="tg-0lax">TransLoc3D<br></td>
-                     <td class="tg-0lax"><a href="https://confluence.csiro.au/#recently-worked" target="_blank" rel="noopener noreferrer">Link</a></td>
+                     <td class="tg-0lax"><a href="https://cloudstor.aarnet.edu.au/plus/s/ODFBQ0t7ME1QoJJ" target="_blank" rel="noopener noreferrer">Link</a></td>
                   </tr>
                   <tr>
                      <td class="tg-0lax">MinkLoc3Dv2</td>
-                     <td class="tg-0lax"><a href="https://confluence.csiro.au/#recently-worked" target="_blank" rel="noopener noreferrer">Link</a></td>
+                     <td class="tg-0lax"><a href="https://cloudstor.aarnet.edu.au/plus/s/Gi68q66sHlKgt7A" target="_blank" rel="noopener noreferrer">Link</a></td>
                   </tr>
                   <tr>
                      <td class="tg-0lax">LoGG3D-Net</td>
-                     <td class="tg-0lax"><a href="https://confluence.csiro.au/#recently-worked" target="_blank" rel="noopener noreferrer">Link</a></td>
+                     <td class="tg-0lax"><a href="" target="_blank" rel="noopener noreferrer">Link</a></td>
                   </tr>
                </tbody>
             </table>
