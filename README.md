@@ -25,4 +25,4 @@ Please see the instructions in our [website](https://csiro-robotics.github.io/Wi
 
 Code for recreating the results in the benchmarking section of our paper. 
 
-Coming soon. 
+Coming soon. Will be available by October 15th. 
