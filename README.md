@@ -8,7 +8,7 @@
          <meta name="keywords" content="wild-places dataset, offroad, natural, 3d, place recognition">
          <link rel="shortcut icon" href="./favicon.ico">
          <div >
-            <h1 id="Wild-Places: A Large-Scale Dataset for Lidar Place Recognition in Unstructured Natural Environments">Wild-Places: A Large-Scale Dataset for Lidar Place Recognition in Unstructured Natural Environments</h1>
+            <!-- <h1 id="Wild-Places: A Large-Scale Dataset for Lidar Place Recognition in Unstructured Natural Environments">Wild-Places: A Large-Scale Dataset for Lidar Place Recognition in Unstructured Natural Environments</h1> -->
             <p><strong>
             <a href="https://scholar.google.com/citations?user=RxbGr2EAAAAJ&hl=en">Joshua Knights<sup>*,1,2</sup></a> &nbsp;&nbsp;&nbsp;
             <a href="https://scholar.google.com/citations?user=BUvScBEAAAAJ&hl=en">Kavisha Vidanapathirana<sup>*,1,2</sup></a> &nbsp;&nbsp;&nbsp;
