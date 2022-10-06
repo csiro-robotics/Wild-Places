@@ -21,7 +21,6 @@
             <br><sup>2</sup>School of Electrical Engineering and Robotics, Queensland University of Technology (QUT), Australia.  E-mails: <span style="font-family:courier;"> {s.sridharan,c.fookes}@qut.edu.au</span>
             <hr>
             <h3 id="abstract--paper--SCD--Proposed-baseline-method-on-SCD--leaderboard--attn"><a href="#1-abstract">Abstract</a> | <a href="#2-paper">Paper</a> | <a href="#3-Images">Images</a> | <a href="#4-Dataset">Dataset Information</a> | <a href="#5-Benchmarking">Benchmarking</a> | <a href="#6-Download">Download</a></h3>
-         </div>
          <!-- 
             ###################
             SECTION 1 - ABSTRACT
