@@ -125,7 +125,7 @@
                   </tr>
                   <tr>
                      <td class="tg-0lax">LoGG3D-Net</td>
-                     <td class="tg-0lax"><a href="" target="_blank" rel="noopener noreferrer">Link</a></td>
+                     <td class="tg-0lax"><a href="https://cloudstor.aarnet.edu.au/plus/s/MCMvtyOGgA87FKD" target="_blank" rel="noopener noreferrer">Link</a></td>
                   </tr>
                </tbody>
             </table>
