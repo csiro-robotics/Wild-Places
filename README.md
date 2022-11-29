@@ -46,10 +46,10 @@
           -->
          <h2 id="2-paper"><a class="anchor" name="2-paper" href="#2-paper"><span class="octicon octicon-link"></span></a>2. Paper</h2>
          <div align="center">
-            <a href="https://arxiv.org/">
+            <a href="https://arxiv.org/abs/2211.12732">
             <img  src="images/frontpage.png" height="440" width="340" />
             </a>   
-            <p><a href="https://arxiv.org/"><strong>Paper on arXiv =&gt; "Wild-Places: A Large-Scale Dataset for Lidar Place Recognition in Unstructured Natural Environments"</strong></a></p>
+            <p><a href="https://arxiv.org/abs/2211.12732"><strong>Paper on arXiv =&gt; "Wild-Places: A Large-Scale Dataset for Lidar Place Recognition in Unstructured Natural Environments"</strong></a></p>
          </div>
          <!-- 
             ###################
@@ -153,7 +153,7 @@
          The links in the above table will allow you to download checkpoints for our trained models on the TransLoc3D, MinkLoc3Dv2 and LoGG3D-Net architectures trained in the paper associated with this dataset release.
          <h4 id="72-Dataset"><a class="anchor" name="72-Dataset" href="#72-dataset"><span class="octicon octicon-link">
          </span></a>7.2 Dataset Download</h4>
-         Our dataset will be released through <a href="https://data.csiro.au/"> The CSIRO Data Access Portal</a> before early November.  Detailed instructions for downloading the dataset can be found in the README file provided on the data access portal page.
+         Our dataset will be released through <a href="https://data.csiro.au/collection/csiro:56372?q=wild-places&_st=keyword&_str=1&_si=1"> The CSIRO Data Access Portal</a> before early November.  Detailed instructions for downloading the dataset can be found in the README file provided on the data access portal page.
          <h4 id="73-License"><a class="anchor" name="73-Dataset" href="#73-dataset"><span class="octicon octicon-link">
          </span></a>7.3 License</h4>
          <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
