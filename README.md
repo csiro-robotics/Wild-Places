@@ -153,7 +153,7 @@
          The links in the above table will allow you to download checkpoints for our trained models on the TransLoc3D, MinkLoc3Dv2 and LoGG3D-Net architectures trained in the paper associated with this dataset release.
          <h4 id="72-Dataset"><a class="anchor" name="72-Dataset" href="#72-dataset"><span class="octicon octicon-link">
          </span></a>7.2 Dataset Download</h4>
-         Our dataset will be released through <a href="https://data.csiro.au/collection/csiro:56372?q=wild-places&_st=keyword&_str=1&_si=1"> The CSIRO Data Access Portal</a> before early November.  Detailed instructions for downloading the dataset can be found in the README file provided on the data access portal page.
+         Our dataset can be downloaded through <a href="https://data.csiro.au/collection/csiro:56372?q=wild-places&_st=keyword&_str=1&_si=1"> The CSIRO Data Access Portal</a>.  Detailed instructions for downloading the dataset can be found in the README file provided on the data access portal page.
          <h4 id="73-License"><a class="anchor" name="73-Dataset" href="#73-dataset"><span class="octicon octicon-link">
          </span></a>7.3 License</h4>
          <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
