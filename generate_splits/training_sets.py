@@ -25,12 +25,12 @@ def construct_query_dict(df_centroids, save_path, ind_nn_r, ind_r_r):
     # ind_r_r: threshold for negative examples
     # Baseline dataset parameters in the original PointNetVLAD code: ind_nn_r=10, ind_r=50
     # Refined dataset parameters in the original PointNetVLAD code: ind_nn_r=12.5, ind_r=50
-    tree = KDTree(df_centroids[['northing', 'easting']])
-    ind_nn = tree.query_radius(df_centroids[['northing', 'easting']], r=ind_nn_r)
-    ind_r = tree.query_radius(df_centroids[['northing', 'easting']], r=ind_r_r)
+    tree = KDTree(df_centroids[['easting', 'northing']])
+    ind_nn = tree.query_radius(df_centroids[['easting', 'northing']], r=ind_nn_r)
+    ind_r = tree.query_radius(df_centroids[['easting', 'northing']], r=ind_r_r)
     queries = {}
     for anchor_ndx in tqdm(range(len(ind_nn))):
-        anchor_pos = np.array(df_centroids.iloc[anchor_ndx][['northing', 'easting']])
+        anchor_pos = np.array(df_centroids.iloc[anchor_ndx][['easting', 'northing']])
         pose = np.array(df_centroids.iloc[anchor_ndx][['x','y','z','qx','qy','qz','qw']])
         query = df_centroids.iloc[anchor_ndx]["filename"]
         # Extract timestamp from the filename
