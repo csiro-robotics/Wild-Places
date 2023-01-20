@@ -16,18 +16,18 @@ If you find this dataset helpful for your research, please cite our paper using 
 ```
 
 ## Contents
-1. [Updates]()
-2. [Download Instructions]()
-3. [Scripts]()
-    * [Environment]()
-    * [Loading Point Clouds]()
-    * [Generating Training & Testing Splits]()
-        * [Training]()
-        * [Testing]()
-    * [Evaluation]()
-        * [Inter-Run]()
-        * [Intra-Run]()
-4. [Thanks]()
+1. [Updates](#1-updates)
+2. [Download Instructions](#2-download-instructions)
+3. [Scripts](#3-scripts)
+    * [Environment](#31-environment)
+    * [Loading Point Clouds](#32-loading-point-clouds)
+    * [Generating Training & Testing Splits](#32-generating-training--testing-splits)
+        * [Training](#training)
+        * [Testing](#testing)
+    * [Evaluation](#33-evaluation)
+        * [Inter-Run](#inter-run-evaluation)
+        * [Intra-Run](#intra-run-evaluation)
+4. [Thanks](#4-thanks)
 
 ## 1. Updates 
 - **06/10/2022** Wild-Places v1.0 Uploaded
