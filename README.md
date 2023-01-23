@@ -30,9 +30,9 @@ If you find this dataset helpful for your research, please cite our paper using 
 4. [Thanks](#4-thanks)
 
 ## 1. Updates 
-- **06/10/2022** Wild-Places v1.0 Uploaded
+- **21/10/2022** Wild-Places v1.0 Uploaded
 - **17/01/2023** Wild-Places is accepted to ICRA2023!
-- **20/01/2023** Wild-Places v2.0 Uploaded.  This update to the dataset integrates GPS into the SLAM solution to alleviate vertical drift in the larger loops of the traversal in both environments. 
+- **20/01/2023** Wild-Places v2.0 Uploaded.  This update to the dataset integrates GPS into the SLAM solution to alleviate vertical drift in the larger loops of the traversal in both environments. NOTE: Sequence K-04 is currently unavailable for v2.0 due to a failed loop closure in the ground truth.  We are currently working on remedying this, and will release the sequence as soon this issue is rectified.
 
 ## 2. Download Instructions
 
