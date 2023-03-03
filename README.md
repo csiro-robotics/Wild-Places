@@ -11,6 +11,7 @@ If you find this dataset helpful for your research, please cite our paper using 
   title={Wild-Places: A Large-Scale Dataset for Lidar Place Recognition in Unstructured Natural Environments},
   author={Vidanapathirana, Kavisha and Knights, Joshua and and Ramezani, Milad and Moghadam, Peyman and Sridharan, Sridha and Fookes, Clinton},
   year={2023},
+  booktitle={IEEE International Conference on Robotics and Automation (ICRA)},
   eprint={arXiv preprint arXiv:2211.12732}
 }
 ```
