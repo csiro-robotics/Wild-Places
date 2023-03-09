@@ -61,14 +61,14 @@
           
           <h2 id="3-Citation"><a class="anchor" name="3-paper" href="#3-paper"><span class="octicon octicon-link"></span></a>3. Citation</h2>
           <p>
-            If you find this paper helpful for your research, please cite our paper using the following reference: 
+            If you find this paper helpful for your research, please cite our paper using the following reference: <br>
             
-            @inproceedings{2023wildplaces,
-            title={Wild-Places: A Large-Scale Dataset for Lidar Place Recognition in Unstructured Natural Environments},
-            author={Knights, Joshua and Vidanapathirana, Kavisha and Ramezani, Milad and Sridharan, Sridha and Fookes, Clinton and Moghadam, Peyman},
-            year={2023},
-            booktitle={IEEE International Conference on Robotics and Automation (ICRA)},
-            eprint={arXiv preprint arXiv:2211.12732}
+            @inproceedings{2023wildplaces, <br>
+            title={Wild-Places: A Large-Scale Dataset for Lidar Place Recognition in Unstructured Natural Environments},<br>
+            author={Knights, Joshua and Vidanapathirana, Kavisha and Ramezani, Milad and Sridharan, Sridha and Fookes, Clinton and Moghadam, Peyman},<br>
+            year={2023},<br>
+            booktitle={IEEE International Conference on Robotics and Automation (ICRA)},<br>
+            eprint={arXiv preprint arXiv:2211.12732}<br>
             }
           </p>
           
