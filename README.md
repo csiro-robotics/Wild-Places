@@ -61,15 +61,17 @@
           
           <h2 id="3-Citation"><a class="anchor" name="3-paper" href="#3-paper"><span class="octicon octicon-link"></span></a>3. Citation</h2>
           <p>
-            If you find this paper helpful for your research, please cite our paper using the following reference: <br>
+            If you find this paper helpful for your research, please cite our paper using the following reference: <br><br>
             
+            <td bgcolor="grey">
             @inproceedings{2023wildplaces, <br>
-            title={Wild-Places: A Large-Scale Dataset for Lidar Place Recognition in Unstructured Natural Environments},<br>
-            author={Knights, Joshua and Vidanapathirana, Kavisha and Ramezani, Milad and Sridharan, Sridha and Fookes, Clinton and Moghadam, Peyman},<br>
-            year={2023},<br>
-            booktitle={IEEE International Conference on Robotics and Automation (ICRA)},<br>
-            eprint={arXiv preprint arXiv:2211.12732}<br>
+               title={Wild-Places: A Large-Scale Dataset for Lidar Place Recognition in Unstructured Natural Environments},<br>
+               author={Knights, Joshua and Vidanapathirana, Kavisha and Ramezani, Milad and Sridharan, Sridha and Fookes, Clinton and Moghadam, Peyman},<br>
+               year={2023},<br>
+               booktitle={IEEE International Conference on Robotics and Automation (ICRA)},<br>
+               eprint={arXiv preprint arXiv:2211.12732}<br>
             }
+            </td> 
           </p>
           
          <!-- 
@@ -129,7 +131,7 @@
             SECTION 7 - Benchmarking
             ###################
           -->
-        <h2 id="7-Benchmarking"><a class="anchor" name="7-Benchmarking" href="#7-Benchmarking"><span class="octicon octicon-link"></span></a>6. Benchmarking</h2>
+        <h2 id="7-Benchmarking"><a class="anchor" name="7-Benchmarking" href="#7-Benchmarking"><span class="octicon octicon-link"></span></a>7. Benchmarking</h2>
         <!-- <h4 id="71-Table"><a class="anchor" name="71-Table" href="#71-Table"><span class="octicon octicon-link">
         </span></a>7.1 Benchmarking Results</h4> -->
         <div align="center">
