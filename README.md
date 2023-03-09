@@ -26,7 +26,7 @@
             <h3 id="abstract--paper--SCD--Proposed-baseline-method-on-SCD--leaderboard--attn">
             <a href="#1-abstract">Abstract</a> | 
             <a href="#2-paper">Paper</a> | 
-            <a href="#3-Citation">GitHub</a> |
+            <a href="#3-Citation">Citation</a> |
             <a href="#4-GitHub">GitHub</a> |
             <a href="#5-Images">Images</a> | 
             <a href="#6-Dataset">Dataset Information</a> | 
@@ -61,7 +61,15 @@
           
           <h2 id="3-Citation"><a class="anchor" name="3-paper" href="#3-paper"><span class="octicon octicon-link"></span></a>3. Citation</h2>
           <p>
-            If you find this dataset helpful for your research, please cite our paper using the following reference: 
+            If you find this paper helpful for your research, please cite our paper using the following reference: 
+            
+            @inproceedings{2023wildplaces,
+            title={Wild-Places: A Large-Scale Dataset for Lidar Place Recognition in Unstructured Natural Environments},
+            author={Knights, Joshua and Vidanapathirana, Kavisha and Ramezani, Milad and Sridharan, Sridha and Fookes, Clinton and Moghadam, Peyman},
+            year={2023},
+            booktitle={IEEE International Conference on Robotics and Automation (ICRA)},
+            eprint={arXiv preprint arXiv:2211.12732}
+            }
           </p>
           
          <!-- 
