@@ -63,7 +63,7 @@
           <p>
             If you find this paper helpful for your research, please cite our paper using the following reference: <br><br>
             
-            <td bgcolor="grey">
+         
             @inproceedings{2023wildplaces, <br>
                title={Wild-Places: A Large-Scale Dataset for Lidar Place Recognition in Unstructured Natural Environments},<br>
                author={Knights, Joshua and Vidanapathirana, Kavisha and Ramezani, Milad and Sridharan, Sridha and Fookes, Clinton and Moghadam, Peyman},<br>
@@ -71,7 +71,7 @@
                booktitle={IEEE International Conference on Robotics and Automation (ICRA)},<br>
                eprint={arXiv preprint arXiv:2211.12732}<br>
             }
-            </td> 
+            
           </p>
           
          <!-- 
