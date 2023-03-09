@@ -51,35 +51,47 @@
             </a>   
             <p><a href="https://arxiv.org/abs/2211.12732"><strong>Pre-print of accepted ICRA2023 paper: "Wild-Places: A Large-Scale Dataset for Lidar Place Recognition in Unstructured Natural Environments"</strong></a></p>
          </div>
-         <!-- 
+         
+          <!-- 
             ###################
-            SECTION 3 Github
+            SECTION 3 citation
             ###################
           -->
-          <h2 id="3-GitHub"><a class="anchor" name="3-paper" href="#3-paper"><span class="octicon octicon-link"></span></a>3. GitHub</h2>
+          
+          <h2 id="3-Citation"><a class="anchor" name="3-paper" href="#3-paper"><span class="octicon octicon-link"></span></a>3. Citation</h2>
+          <p>
+            If you find this dataset helpful for your research, please cite our paper using the following reference: <br> 
+          </p>
+          
+         <!-- 
+            ###################
+            SECTION 4 Github
+            ###################
+          -->
+          <h2 id="4-GitHub"><a class="anchor" name="4-paper" href="#4-paper"><span class="octicon octicon-link"></span></a>4. GitHub</h2>
           <p>
             We provide training and evaluation code for our dataset <a href="https://github.com/csiro-robotics/Wild-Places/tree/master">in our GitHub repository</a> as well as example script for loading the dataset and forming the training and testing splits outlined in our paper.
           </p>
          <!-- 
             ###################
-            SECTION 3 - IMAGES
+            SECTION 5 - IMAGES
             ###################
           -->
-         <h2 id="4-Images"><a class="anchor" name="4-Wild-Places" href="#4-Images"><span class="octicon octicon-link"></span></a>4. Images</h2>
-         <h4 id="41-environments"><a class="anchor" name="41-environments" href="#41-environments"><span class="octicon octicon-link">
-         </span></a>4.1 Sequences & Environments</h4>
+         <h2 id="5-Images"><a class="anchor" name="5-Wild-Places" href="#5-Images"><span class="octicon octicon-link"></span></a>5. Images</h2>
+         <h4 id="51-environments"><a class="anchor" name="51-environments" href="#51-environments"><span class="octicon octicon-link">
+         </span></a>5.1 Sequences & Environments</h4>
          <div align="center">
             <img  src="images/combined_env_img.png" height="600"/>
          </div>
          <p>Environment and sequence visualisation.  The top row shows the trajectory of two sequences - V-03 and K-02 - overlaid on a satellite image of their respective environments.  The bottom row shows the trajectory of sequences 01, 02, 03 & 04 on each environment from top to bottom, respectively.</p>
-         <h4 id="42-Global-Map"><a class="anchor" name="42-Global-Map" href="#42-Global-Map"><span class="octicon octicon-link"></span>
-         </a>4.2 Global Map</h4>
+         <h4 id="52-Global-Map"><a class="anchor" name="52-Global-Map" href="#52-Global-Map"><span class="octicon octicon-link"></span>
+         </a>5.2 Global Map</h4>
          <div align="center">
             <img src="images/venman12month_fly.gif" height="500"/>
          </div>
          <p> Visualisation of the Global Map.  We use Wildcat SLAM to create an undistorted global point cloud map for each sequence, from which we extract the submaps used during training and evaluation.</p>
-         <h4 id="43-Diversity"><a class="anchor" name="43-Diversity" href="#43-Diversity"><span class="octicon octicon-link">
-         </span></a>4.3 Diversity</h4>
+         <h4 id="53-Diversity"><a class="anchor" name="43-Diversity" href="#53-Diversity"><span class="octicon octicon-link">
+         </span></a>5.3 Diversity</h4>
          <div align="center">
             <img src="images/diversity.png" height="440" />
          </div>
