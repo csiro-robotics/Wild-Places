@@ -60,7 +60,7 @@
           
           <h2 id="3-Citation"><a class="anchor" name="3-paper" href="#3-paper"><span class="octicon octicon-link"></span></a>3. Citation</h2>
           <p>
-            If you find this dataset helpful for your research, please cite our paper using the following reference: <br> 
+            If you find this dataset helpful for your research, please cite our paper using the following reference: 
           </p>
           
          <!-- 
