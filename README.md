@@ -49,7 +49,7 @@
             <a href="https://arxiv.org/abs/2211.12732">
             <img  src="images/frontpage.png" height="440" width="340" />
             </a>   
-            <p><a href="https://arxiv.org/abs/2211.12732"><strong>Paper on arXiv =&gt; "Wild-Places: A Large-Scale Dataset for Lidar Place Recognition in Unstructured Natural Environments"</strong></a></p>
+            <p><a href="https://arxiv.org/abs/2211.12732"><strong>Pre-print of accepted ICRA2023 paper: "Wild-Places: A Large-Scale Dataset for Lidar Place Recognition in Unstructured Natural Environments"</strong></a></p>
          </div>
          <!-- 
             ###################
