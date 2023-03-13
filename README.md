@@ -16,6 +16,7 @@
                <br><a href="https://scholar.google.com/citations?user=v8-lMdUAAAAJ&hl=en">Sridha Sridharan<sup>2</sup></a> &nbsp;&nbsp;&nbsp;
                <a href="https://scholar.google.com.au/citations?user=VpaJsNQAAAAJ&hl=en">Clinton Fookes<sup>2</sup></a> &nbsp;&nbsp;&nbsp;
                <a href="https://scholar.google.com.au/citations?user=QAVcuWUAAAAJ&hl=en">Peyman Moghadam<sup>1,2</sup></a> &nbsp;&nbsp;&nbsp; </strong></p>
+               <p> Proceeding of ICRA2023
                <p><sup>*</sup> Equal Contribution
                <br><sup>1</sup>Robotics and Autonomous Systems Group, DATA61, CSIRO, Australia.  E-mails: <span style="font-family:courier;"> firstname.lastname@data61.csiro.au</span>
                <br><sup>2</sup>School of Electrical Engineering and Robotics, Queensland University of Technology (QUT), Australia.  E-mails: <span style="font-family:courier;"> {s.sridharan,c.fookes}@qut.edu.au</span>
