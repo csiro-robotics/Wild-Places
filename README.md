@@ -62,18 +62,8 @@
           
           <h2 id="3-Citation"><a class="anchor" name="3-paper" href="#3-paper"><span class="octicon octicon-link"></span></a>3. Citation</h2>
           <p>
-            If you find this paper helpful for your research, please cite our paper using the following reference: <br><br>
-            
-         
-            @inproceedings{2023wildplaces, <br>
-                 title={Wild-Places: A Large-Scale Dataset for Lidar Place Recognition in Unstructured Natural Environments},<br>
-                 author={Knights, Joshua and Vidanapathirana, Kavisha and Ramezani, Milad and Sridharan, Sridha and Fookes, Clinton and Moghadam, Peyman},<br>
-                 year={2023},<br>
-                 booktitle={IEEE International Conference on Robotics and Automation (ICRA)},<br>
-                 eprint={arXiv preprint arXiv:2211.12732}<br>
-            }
-            
-          </p>
+            If you find this paper helpful for your research, please cite our paper using the following reference: Joshua Knights, Kavisha Vidanapathirana, Milad Ramezani, Sridha Sridharan, Clinton Fookes, and Peyman Moghadam, "Wild-Places: A Large-Scale Dataset for Lidar Place Recognition in Unstructured Natural Environments." IEEE International Conference on Robotics and Automation (ICRA) (2023). </p> <br><br>
+
           
          <!-- 
             ###################
@@ -177,7 +167,7 @@
          The links in the above table will allow you to download checkpoints for our trained models on the TransLoc3D, MinkLoc3Dv2 and LoGG3D-Net architectures trained in the paper associated with this dataset release.
          <h4 id="82-Dataset"><a class="anchor" name="82-Dataset" href="#82-dataset"><span class="octicon octicon-link">
          </span></a>8.2 Dataset Download</h4>
-         Our dataset can be downloaded through <a href="https://data.csiro.au/collection/csiro:56372?q=wild-places&_st=keyword&_str=1&_si=1"> The CSIRO Data Access Portal</a>.  Detailed instructions for dataset, downloading the dataset can be found in the <a href="https://github.com/csiro-robotics/Wild-Places/blob/Website/images/Wild-Places-SupplementaryMaterial.pdf">Supplementary Material file</a> provided on the in this page and CSIRO's data access portal page.
+         Our dataset can be downloaded through <a href="https://data.csiro.au/collection/csiro:56372?q=wild-places&_st=keyword&_str=1&_si=1"> The CSIRO Data Access Portal</a>.  Detailed instructions for dataset, and downloading the dataset can be found in the <a href="https://github.com/csiro-robotics/Wild-Places/blob/Website/images/Wild-Places-SupplementaryMaterial.pdf">Supplementary Material file</a> in this page and CSIRO's data access portal page.
          <h4 id="83-License"><a class="anchor" name="83-Dataset" href="#83-dataset"><span class="octicon octicon-link">
          </span></a>8.3 License</h4>
          <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
