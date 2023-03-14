@@ -2,7 +2,6 @@
    <head></head>
    <body>
       <link rel="stylesheet" type="text/css" href="./github.css" id="_theme">
-      <div id="_html" class="markdown-body">
          <meta charset="UTF-8">
          <meta name="description" content="Wild-Places: A Large-Scale Dataset for Lidar Place Recognition in Unstructured Natural Environments">
          <meta name="keywords" content="wild-places dataset, offroad, natural, 3d, place recognition">
@@ -23,7 +22,6 @@
             </p>
          </div>
             <hr>
-         <div align="center">
             <h3 id="abstract--paper--SCD--Proposed-baseline-method-on-SCD--leaderboard--attn">
             <a href="#1-abstract">Abstract</a> | 
             <a href="#2-paper">Paper</a> | 
@@ -33,13 +31,12 @@
             <a href="#6-Dataset">Dataset Information</a> | 
             <a href="#7-Benchmarking">Benchmarking</a> | 
             <a href="#8-Download">Download</a></h3>
-         </div>
          <!-- 
             ###################
             SECTION 1 - ABSTRACT
             ###################
           -->
-         <h2 id="1-abstract"><a class="anchor" name="1-abstract" href="#1-abstract"><span class="octicon octicon-link"></span></a>1. Abstract</h2>
+        <h2 id="1-abstract"><a class="anchor" name="1-abstract" href="#1-abstract"><span class="octicon octicon-link"></span></a>1. Abstract</h2>
          <p style="text-align: justify"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Many existing datasets for lidar place recognition are solely representative of structured urban environments, and have recently been saturated in performance by deep learning based approaches. Natural and unstructured environments present many additional challenges for the tasks of long-term localisation but these environments are not represented in currently available datasets.  To address this we introduce Wild-Places, a challenging large-scale dataset for lidar place recognition in unstructured, natural environments.  Wild-Places contains eight lidar sequences collected with a handheld sensor payload over the course of fourteen months, containing a total of 63K undistorted lidar submaps along with accurate 6DoF ground truth.  Our dataset contains multiple revisits both within and between sequences, allowing for both intra-sequence (i.e. loop closure detection) and inter-sequence (i.e. re-localisation) place recognition.  We also benchmark several state-of-the-art approaches to demonstrate the challenges that this dataset introduces, particularly the case of long-term place recognition due to natural environments changing over time. </em></p>
          <!-- 
             ###################
@@ -53,19 +50,15 @@
             </a>   
             <p><a href="https://arxiv.org/abs/2211.12732"><strong>Pre-print of accepted ICRA2023 paper: "Wild-Places: A Large-Scale Dataset for Lidar Place Recognition in Unstructured Natural Environments"</strong></a></p>
          </div>
-         
           <!-- 
             ###################
             SECTION 3 Citation
             ###################
-          -->
-          
+          --> 
           <h2 id="3-Citation"><a class="anchor" name="3-paper" href="#3-paper"><span class="octicon octicon-link"></span></a>3. Citation</h2>
           <p>
             If you find this paper helpful for your research, please cite our paper using the following reference: Joshua Knights, Kavisha Vidanapathirana, Milad Ramezani, Sridha Sridharan, Clinton Fookes, and Peyman Moghadam, "Wild-Places: A Large-Scale Dataset for Lidar Place Recognition in Unstructured Natural Environments." IEEE International Conference on Robotics and Automation (ICRA) (2023). </p> <br><br>
-
-          
-         <!-- 
+           <!-- 
             ###################
             SECTION 4 Github
             ###################
@@ -178,4 +171,4 @@
             END OF OUR CONTENT
             ###################
           -->
-</div>
+
