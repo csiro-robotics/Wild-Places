@@ -1,0 +1,17 @@
+debug: False
+data:
+ dataset_folder: /mnt/bracewell/git/ugvtest
+ evalset_folder: /mnt/bracewell/git/ugvtest
+ train_file: pickles/bushwalk/final_pickles/training_both_5_50.pickle
+ val_file: pickles/bushwalk/final_pickles/val_both_5_50.pickle
+eval:
+  eval_mode: 0
+  similarity: cosine
+  batch_size: 32
+  database_files: [venman_evaluation_5m_database.pickle, karawatha_evaluation_5m_database.pickle]
+  query_files: [venman_evaluation_5m_query.pickle, karawatha_evaluation_5m_query.pickle]
+  world_thresh: 5
+  time_thresh: 600
+  save_embeddings: '/home/'
+  set_names: ['01','02','03','04']
+  make_graph_in_eval: False
