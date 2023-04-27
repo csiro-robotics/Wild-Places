@@ -137,15 +137,15 @@
                <tbody>
                   <tr>
                      <td class="tg-0lax">TransLoc3D<br></td>
-                     <td class="tg-0lax"><a href="https://cloudstor.aarnet.edu.au/plus/s/ODFBQ0t7ME1QoJJ" target="_blank" rel="noopener noreferrer">Link</a></td>
+                     <td class="tg-0lax"><a href="https://www.dropbox.com/s/dotyuurc3n5m24w/TransLoc3D.pth?dl=0" target="_blank" rel="noopener noreferrer">Link</a></td>
                   </tr>
                   <tr>
                      <td class="tg-0lax">MinkLoc3Dv2</td>
-                     <td class="tg-0lax"><a href="https://cloudstor.aarnet.edu.au/plus/s/Gi68q66sHlKgt7A" target="_blank" rel="noopener noreferrer">Link</a></td>
+                     <td class="tg-0lax"><a href="https://www.dropbox.com/s/8ijq9h99m1snzxn/MinkLoc3Dv2.pth?dl=0" target="_blank" rel="noopener noreferrer">Link</a></td>
                   </tr>
                   <tr>
                      <td class="tg-0lax">LoGG3D-Net</td>
-                     <td class="tg-0lax"><a href="https://cloudstor.aarnet.edu.au/plus/s/MCMvtyOGgA87FKD" target="_blank" rel="noopener noreferrer">Link</a></td>
+                     <td class="tg-0lax"><a href="https://www.dropbox.com/s/h1ic00tvfnstvfm/LoGG3D-Net.pth?dl=0" target="_blank" rel="noopener noreferrer">Link</a></td>
                   </tr>
                </tbody>
             </table>
