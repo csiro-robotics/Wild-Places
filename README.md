@@ -89,8 +89,8 @@ python eval/inter-sequence.py \
 Where:
 - `$_PATH_TO_QUERIES_PICKLES` is a string pointing to the location of the generated query set pickle for an environment
 - `$_PATH_TO_DATABASES_PICKLES` is a string pointing to the location of the generated database set pickle for an environment
-- `$_PATH_TO_QUERY_FEATURES` is a string pointing towards a pickle file containing the query set features to be used in evaluation.  These features should be a list of Nx3 numpy arrays or tensors, where N is the number of point cloud frames in the query set of each sequence in the environment.
-- `$_PATH_TO_DATABASE_FEATURES` is a string pointing towards a pickle file containing the database set features to be used in evaluation.  These features should be a list of Nx3 numpy arrays or tensors, where N is the number of point cloud frames in the database set of each sequence in the environment.
+- `$_PATH_TO_QUERY_FEATURES` is a string pointing towards a pickle file containing the query set features to be used in evaluation.  These features should be a list of Nxd numpy arrays or tensors, where N is the number of point cloud frames in the query set of each sequence in the environment.
+- `$_PATH_TO_DATABASE_FEATURES` is a string pointing towards a pickle file containing the database set features to be used in evaluation.  These features should be a list of Nxd numpy arrays or tensors, where N is the number of point cloud frames in the database set of each sequence in the environment.
 - `$_LOCATION_NAMES` is a string containing the name of the environment being evaluated
 
 #### __Intra-run Evaluation__
@@ -103,7 +103,7 @@ python eval/intra-sequence.py \
 ```
 Where:
 - `$_PATH_TO_DATABASES_PICKLES` is a string pointing to the location of the generated database set pickle for a single sequence
-- `$_PATH_TO_DATABASE_FEATURES` is a string pointing towards a pickle file containing the run features to be used in evaluation.  These features should be a single Nx3 numpy array or tensor, where N is the number of point cloud frames in that sequence
+- `$_PATH_TO_DATABASE_FEATURES` is a string pointing towards a pickle file containing the run features to be used in evaluation.  These features should be a single Nxd numpy array or tensor, where N is the number of point cloud frames in that sequence
 - `$_LOCATION_NAMES` is a string containing the name of the sequence being evaluated 
 
 ## 4. Thanks
