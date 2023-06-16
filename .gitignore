@@ -1,7 +1,6 @@
 *.pyc
 *.pickle
 *.pth
-log*
 __pycache__
 slurm*
 .vscode
