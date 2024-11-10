@@ -54,7 +54,7 @@ class EvalDataset:
         oo = np.ones(len(xyz)).reshape((-1,1))
         xyzr = np.hstack((xyz, oo)).astype(np.float32)
 
-        return make_sparse_tensor(xyzr, 0.5)
+        return make_sparse_tensor(xyzr, 0.5) # The released checkpoint was trained on voxel_size=0.5 . Don't change this value during evaluation.
 
     def __getitem__(self, idx):
         path =  os.path.join(self.dataset_folder, self.set[idx]['rel_scan_filepath'])
@@ -73,7 +73,9 @@ def get_eval_dataloader(dataset, dataset_folder):
     )
     return dataloader
 
-def get_latent_vectors(model, dataset, dataset_folder, gd_dim=1024):
+def get_latent_vectors(model, dataset, dataset_folder, gd_dim=1024): 
+    # Load the model from: https://github.com/csiro-robotics/LoGG3D-Net
+    # Make sure to set feature_dim=32 here: https://github.com/csiro-robotics/LoGG3D-Net/blob/cfbe064e36a4c39ef1bf6bb2d0304c6f9c7a0905/models/pipeline_factory.py#L10
     eval_dataloader = get_eval_dataloader(dataset, dataset_folder)
     vectors = []
     model.eval()
