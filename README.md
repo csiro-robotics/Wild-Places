@@ -74,7 +74,7 @@ This script will generate seperate testing pickles for the inter-run and intra-r
 ### 3.3 Evaluation
 We provide evaluation scripts for both inter and intra-run evaluation on our dataset.
 
-* For example, to evaluate the released checkpoint of [LoGG3D-Net](https://github.com/csiro-robotics/LoGG3D-Net) ([LoGG3D-Net.pth](https://www.dropbox.com/s/h1ic00tvfnstvfm/LoGG3D-Net.pth?dl=0)), use the utility function provided in [scripts/eval/logg3d/logg3d_utils.py](https://github.com/csiro-robotics/Wild-Places/blob/70ffff3b7bf8497fdc627660050f983df15c3871/scripts/eval/logg3d/logg3d_utils.py#L76) to generate global descriptors for `database_features` and `query_features`. Then, use the evaluation instructions provided below:
+* For example, to evaluate the released checkpoint of [LoGG3D-Net](https://github.com/csiro-robotics/LoGG3D-Net) ([LoGG3D-Net.pth](https://www.dropbox.com/s/h1ic00tvfnstvfm/LoGG3D-Net.pth?dl=0)), use the utility function provided in [scripts/eval/logg3d/logg3d_utils.py](https://github.com/csiro-robotics/Wild-Places/blob/eafde14a4a1aeb5e96a5d56c12ed046bcfdb02d9/scripts/eval/logg3d/logg3d_utils.py#L76) to generate global descriptors for `database_features` and `query_features`. Then, use the evaluation instructions provided below:
 
 #### __Inter-run Evaluation__
 
