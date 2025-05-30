@@ -31,9 +31,10 @@ If you find this dataset helpful for your research, please cite our paper using 
 4. [Thanks](#4-thanks)
 
 ## 1. Updates 
-- **21/10/2022** Wild-Places v1.0 Uploaded
-- **17/01/2023** Wild-Places is accepted to ICRA2023!
-- **20/01/2023** Wild-Places v2.0 Uploaded.  This update to the dataset integrates GPS into the SLAM solution to alleviate vertical drift in the larger loops of the traversal in both environments. NOTE: Sequence K-04 is currently unavailable for v2.0 due to a failed loop closure in the ground truth.  We are currently working on remedying this, and will release the sequence as soon this issue is rectified.
+- **Oct 2022** Wild-Places v1.0 Uploaded
+- **Jan 2023** Wild-Places is accepted to ICRA2023!
+- **Jan 2023** Wild-Places v2.0 Uploaded.  This update to the dataset integrates GPS into the SLAM solution to alleviate vertical drift in the larger loops of the traversal in both environments. NOTE: Sequence K-04 is currently unavailable for v2.0 due to a failed loop closure in the ground truth.  We are currently working on remedying this, and will release the sequence as soon this issue is rectified.
+- **Feb 2025** Fix the broken timestamps in the poses files. 
 
 ## 2. Download Instructions
 
@@ -56,6 +57,7 @@ A code snippet to load a pointcloud file from our dataset can be found in `eval/
 
 In this repository we provide several scripts for partitioning our dataset into splits for training and evaluation.  
 The output of these scripts are pickle files containing training and evaluation splits in a format compatible with existing repositories such as [PointNetVLAD](https://github.com/mikacuy/pointnetvlad), [MinkLoc3D](https://github.com/jac99/MinkLoc3D)([v2](https://github.com/jac99/MinkLoc3Dv2)), [TransLoc3D](https://github.com/slothfulxtx/TransLoc3D) and [PPT](https://github.com/fpthink/PPT-Net).
+
 #### __Training__
 To generate the training splits run the following command:
 ```
