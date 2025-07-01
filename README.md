@@ -3,16 +3,17 @@
 ![](./utils/docs/teaser_image.png)
 
 
-This repository contains the code implementation used in the paper *Wild-Places: A Large-Scale Dataset for Lidar Place Recognition in Unstructured Natural Environments*, which has been accepted for publication at ICRA2023.  
+This repository contains the code implementation used in the paper *Wild-Places: A Large-Scale Dataset for Lidar Place Recognition in Unstructured Natural Environments*, which has been published at ICRA2023.  
 
 If you find this dataset helpful for your research, please cite our paper using the following reference:
 ```
 @inproceedings{2023wildplaces,
-  title={Wild-Places: A Large-Scale Dataset for Lidar Place Recognition in Unstructured Natural Environments},
+  title={Wild-places: A large-scale dataset for lidar place recognition in unstructured natural environments},
   author={Knights, Joshua and Vidanapathirana, Kavisha and Ramezani, Milad and Sridharan, Sridha and Fookes, Clinton and Moghadam, Peyman},
+  booktitle={2023 IEEE international conference on robotics and automation (ICRA)},
+  pages={11322--11328},
   year={2023},
-  booktitle={IEEE International Conference on Robotics and Automation (ICRA)},
-  eprint={arXiv preprint arXiv:2211.12732}
+  organization={IEEE}
 }
 ```
 
