@@ -20,8 +20,9 @@ def evaluate(log = False):
     log = False 
     show_progress = True
 
-    eval_database_files = configs.eval.database_files 
     eval_query_files = configs.eval.query_files 
+    eval_database_files = configs.eval.database_files 
+    eval_location_names = configs.eval.location_names 
 
     print(eval_database_files)
     print(eval_query_files)
@@ -29,35 +30,15 @@ def evaluate(log = False):
     assert len(eval_database_files) == len(eval_query_files)
 
     stats = {}
-    mrr_grid = {}
-    recall_1_grid = {}
-    for database_file, query_file in zip(eval_database_files, eval_query_files):
-        # Extract location name from query and database files
-        location_name = database_file.split('/')[-1].split('_')[0]
-        temp = query_file.split('/')[-1].split('_')[0]
-        assert location_name == temp, 'Database location: {} does not match query location: {}'.format(database_file,
-                                                                                                       query_file)
+    for query_file, database_file, location_name in zip(eval_query_files, eval_database_files, eval_location_names):
 
-        if os.path.exists(database_file):
-            p = database_file
-        else:
-            p = os.path.join(configs.data.evalset_folder, database_file)
-        with open(p, 'rb') as f:
-            database_sets = pickle.load(f)
+        query_sets = pickle.load(open(query_file, 'rb'))
+        database_sets = pickle.load(open(database_file, 'rb'))
 
-        if os.path.exists(query_file):
-            p = query_file
-        else:
-            p = os.path.join(configs.data.evalset_folder, query_file)
-        with open(p, 'rb') as f:
-            query_sets = pickle.load(f)
-
-        temp, mrr_temp, recall_1_temp = evaluate_dataset(database_sets, query_sets, log=log, show_progress=show_progress)
+        temp = evaluate_dataset(database_sets, query_sets, log=log, show_progress=show_progress)
         stats[location_name] = temp
-        mrr_grid[location_name] = mrr_temp
-        recall_1_grid[location_name] = recall_1_temp
 
-    return stats, mrr_grid, recall_1_grid
+    return stats
 
 
 def evaluate_dataset(database_sets, query_sets, log: bool = False,
@@ -83,8 +64,6 @@ def evaluate_dataset(database_sets, query_sets, log: bool = False,
 
     pbar = tqdm.tqdm(total = len(query_sets)**2 - len(query_sets), desc = 'Eval')
 
-    mrr_grid = np.identity(len(database_sets)) * 100
-    recall_1_grid = np.identity(len(database_sets)) * 100
 
     fig, axes = plt.subplots(len(query_sets), len(query_sets))
 
@@ -100,40 +79,25 @@ def evaluate_dataset(database_sets, query_sets, log: bool = False,
             one_percent_recall.append(pair_opr)
             mrr_list.append(mrr)
 
-            mrr_grid[i][j] = mrr
-            recall_1_grid[i][j] = pair_recall[0]
             
 
     ave_recall = recall / count
     ave_one_percent_recall = np.mean(one_percent_recall)
     mean_recip_rank = np.mean(mrr_list)
     stats = {'ave_one_percent_recall': ave_one_percent_recall, 'ave_recall': ave_recall, 'mrr': mean_recip_rank}
-    
-    if configs.eval.save_grid_results != None:
-        if not os.path.exists(configs.eval.save_grid_results):
-            os.makedirs(configs.eval.save_grid_results)
-        fig, ax = plt.subplots()
-        ax = sns.heatmap(recall_1_grid.T, linewidth = 2.5, cmap = 'YlGn', annot = np.round(recall_1_grid.T, decimals = 1),
-                        fmt = '', annot_kws={"size": 20 }, cbar = False, square=True, ax = ax)
-        ax.set_xlabel('Database')
-        ax.set_ylabel('Query')
-        plt.savefig(os.path.join(configs.eval.save_grid_results, 'r1.png'), pad_inches = 0.1, dpi = 300)
-
-
-    return stats, mrr_grid, recall_1_grid
+    return stats
 
 
 
 @torch.no_grad()
 def get_latent_vectors(t_set):
     # Adapted from original PointNetVLAD code
-    
     scs, rks = [], []
     for fid in tqdm.tqdm(t_set):
-        f = t_set[fid]['rel_scan_filepath']
+        f = t_set[fid]['query']
         p = os.path.join(configs.data.dataset_folder, f)
-        pcd = o3d.io.read_point_cloud(p)
-        xyz = np.asarray(pcd.points)
+        xyzr = np.fromfile(p, dtype=np.float32).reshape(-1,4)
+        xyz = xyzr[:,:3]
         sc = get_sc(xyz)
         rk = sc2rk(sc)
         scs.append(sc)
@@ -234,8 +198,6 @@ def print_eval_stats(stats):
         recall_list = str(stats[database_name]['ave_recall'])
         t = f'Dataset: {database_name}\nAvg. top 1% recall: {top1p:.2f}   Avg. MMR: {mrr:.2f} Avg. recall @N:\n{recall_list}'
         print(t)
-        # print(t.format(stats[database_name]['ave_one_percent_recall']))
-        # print(stats[database_name]['ave_recall'])
         stat_str_list.append(t)
     save_str = '\n'.join(stat_str_list)
     return save_str
@@ -263,82 +225,13 @@ def pnv_write_eval_stats(file_name, prefix, stats):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Eval LoGG3D')
     parser.add_argument('--config', type=str, required=False, default='sc_eval_config.yaml')
-    parser.add_argument('--save_grid_results', default = '/mnt/bracewell/git/egonn/third_party/scan_context/with_reranking_new_3m/')
-
     args, opts = parser.parse_known_args()
 
     configs.load(args.config, recursive = True)
     configs.update(opts)
-    configs.eval.save_grid_results = args.save_grid_results
     
     print('Training config path: {}'.format(args.config))
-    save_dir = configs.eval.save_grid_results
 
-    stats, mrr_grid, recall_1_grid = evaluate()
+    stats = evaluate()
 
     save_str = print_eval_stats(stats)
-
-    if save_dir != None:
-
-        with open(os.path.join(configs.eval.save_grid_results, 'results.txt'), 'w') as f:
-            f.write(save_str) 
-
-        fig, axes = list(plt.subplots(1, len(mrr_grid)))
-        fig.set_size_inches(5 * len(mrr_grid), 5)
-        if len(mrr_grid) == 1:
-            axes = [axes]
-        else:
-            axes = list(axes)
-
-        for idx, k in enumerate(mrr_grid.keys()):
-            ax = axes[idx]
-            print(ax)
-            mrr = mrr_grid[k]
-
-            df_mrr = pd.DataFrame(columns=configs.eval.set_names)
-            for idx, name in enumerate(configs.eval.set_names):
-                df_mrr.loc[name] = mrr[idx]
-            df_mrr.to_csv(os.path.join(save_dir, f'mrr_grid_{k}.csv'))
-
-            ax = sns.heatmap(mrr, linewidth = 2.5, cmap = 'YlGn', annot = np.round(mrr, decimals = 1),
-                        fmt = '', annot_kws={"size": 20 }, cbar = False, square=True, ax = ax)
-
-            ax.set_title(f'MRR_{k}', fontsize=17)
-            ax.set_xticklabels(configs.eval.set_names, fontsize=17)
-            ax.set_yticklabels(configs.eval.set_names, fontsize=17)
-            ax.set_xlabel('Database', fontsize=17)
-            ax.set_ylabel('Query', fontsize=17)
-
-        plt.savefig(os.path.join(save_dir, f'mrr.png'), bbox_inches = 'tight',
-                pad_inches = 0.1, dpi = 300)
-        
-        # Recall@1
-        fig, axes = plt.subplots(1, len(recall_1_grid))
-        fig.set_size_inches(5 * len(mrr_grid), 5)
-        if len(mrr_grid) == 1:
-            axes = [axes]
-        else:
-            axes = list(axes)
-
-        for idx, k in enumerate(recall_1_grid.keys()):
-            ax = axes[idx]
-            r1 = recall_1_grid[k]
-
-            df_r1 = pd.DataFrame(columns=configs.eval.set_names)
-            for idx, name in enumerate(configs.eval.set_names):
-                df_r1.loc[name] = r1[idx]
-            df_r1.to_csv(os.path.join(save_dir, f'r1_grid_{k}.csv'))
-
-            ax = sns.heatmap(r1, linewidth = 2.5, cmap = 'YlGn', annot = np.round(r1, decimals = 1),
-                        fmt = '', annot_kws={"size": 20 }, cbar = False, square=True, ax = ax)
-
-            ax.set_title(f'r1_{k}', fontsize=17)
-            ax.set_xticklabels(configs.eval.set_names, fontsize=17)
-            ax.set_yticklabels(configs.eval.set_names, fontsize=17)
-            ax.set_xlabel('Database', fontsize=17)
-            ax.set_ylabel('Query', fontsize=17)
-
-        plt.savefig(os.path.join(save_dir, f'r1.png'), bbox_inches = 'tight',
-                pad_inches = 0.1, dpi = 300)
-
-    

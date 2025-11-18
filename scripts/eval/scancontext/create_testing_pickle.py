@@ -5,8 +5,8 @@ from sklearn.neighbors import KDTree
 import pickle 
 import argparse 
 from tqdm import tqdm 
-from generate_splits.utils import TrainingTuple, load_csv, check_in_test_set
-from generate_splits.utils import P1, P2, P3, P4, P5, P6
+from utils import TrainingTuple, load_csv, check_in_test_set
+from utils import P1, P2, P3, P4, P5, P6
 
 def output_to_file(output, base_path, filename):
     file_path = os.path.join(base_path, filename)
@@ -14,7 +14,7 @@ def output_to_file(output, base_path, filename):
         pickle.dump(output, handle, protocol=pickle.HIGHEST_PROTOCOL)
     print("Done ", filename)
 
-def construct_query_and_database_sets(base_path, runs_folder, folders, pointcloud_fols, filename, p, output_name, save_dir, eval_thresh):
+def construct_query_and_database_sets(base_path, folders, pointcloud_fols, filename, p, output_name, save_dir, eval_thresh):
     database_trees = []
     test_trees = []
 
@@ -25,7 +25,7 @@ def construct_query_and_database_sets(base_path, runs_folder, folders, pointclou
         df_test = pd.DataFrame(columns=['file', 'easting', 'northing'])
 
         # Load dataframe 
-        df_locations = load_csv(os.path.join(base_path, runs_folder, folder, filename), os.path.join(runs_folder, folder, pointcloud_fols))
+        df_locations = load_csv(os.path.join(base_path, folder, filename), os.path.join(folder, pointcloud_fols))
         for index, row in df_locations.iterrows():
             if check_in_test_set(row['easting'], row['northing'], p, []) == 'test':
                 df_test.loc[len(df_test)] = row 
@@ -41,14 +41,14 @@ def construct_query_and_database_sets(base_path, runs_folder, folders, pointclou
     for folder in tqdm(folders):
         database = {}
         test = {}
-        df_locations = load_csv(os.path.join(base_path, runs_folder, folder, filename), os.path.join(runs_folder, folder, pointcloud_fols))
+        df_locations = load_csv(os.path.join(base_path, folder, filename), os.path.join(folder, pointcloud_fols))
         for index, row in df_locations.iterrows():
             pose = np.array(row[['x','y','z','qx','qy','qz','qw']])        
-            row['timestamp'] = float(os.path.basename(row['filename'].replace('.pcd', ''))) 
+            row['%time'] = float(os.path.basename(row['filename'].replace('.bin', ''))) 
             if check_in_test_set(row['easting'], row['northing'], p, []) == 'test':
-                test[len(test.keys())] = {'query': row['filename'], 'northing': row['northing'], 'easting': row['easting'], 'pose': pose, 'timestamp': row['timestamp']}
+                test[len(test.keys())] = {'query': row['filename'], 'northing': row['northing'], 'easting': row['easting'], 'pose': pose, 'timestamp': row['%time']}
             database[len(database.keys())] = {'query': row['filename'], 'northing': row['northing'],
-                                              'easting': row['easting'], 'pose': pose, 'timestamp': row['timestamp']}
+                                              'easting': row['easting'], 'pose': pose, 'timestamp': row['%time']}
 
             # Output to file for in-run evaluation
             single_run_output_name = os.path.basename(folder) + '.pickle'
@@ -83,7 +83,7 @@ if __name__ == '__main__':
     parser.add_argument('--csv_filename', type = str, default = 'poses_aligned.csv', help = 'Name of CSV containing ground truth poses')
     parser.add_argument('--cloud_folder', type = str, default = 'Clouds_downsampled', help = 'Name of folder containing point cloud frames')
 
-    parser.add_argument('--eval_thresh', type = float, default = 5, help  = 'Threshold for correct retrieval during eval')
+    parser.add_argument('--eval_thresh', type = float, default = 3, help  = 'Threshold for correct retrieval during eval')
     args = parser.parse_args()
 
     print('Dataset root: {}'.format(args.dataset_root))
@@ -95,11 +95,10 @@ if __name__ == '__main__':
     base_path = args.dataset_root
 
     # For Venman
-    folders = sorted(os.listdir(os.path.join(args.dataset_root, 'Venman')))
+    folders = ['V-01','V-02','V-03','V-04']
     print('Venman')
     construct_query_and_database_sets(
         base_path = args.dataset_root,
-        runs_folder = 'Venman',
         folders = folders,
         pointcloud_fols = args.cloud_folder,
         filename = args.csv_filename,
@@ -110,11 +109,10 @@ if __name__ == '__main__':
     )
 
     # For Karawatha
-    folders = sorted(os.listdir(os.path.join(args.dataset_root, 'Karawatha')))
+    folders = ['K-01','K-02','K-03','K-04']
     print('Karawatha')
     construct_query_and_database_sets(
         base_path = args.dataset_root,
-        runs_folder = 'Karawatha',
         folders = folders,
         pointcloud_fols = args.cloud_folder,
         filename = args.csv_filename,
