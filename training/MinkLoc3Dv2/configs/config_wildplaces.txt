@@ -1,0 +1,22 @@
+[DEFAULT]
+dataset_folder = /path/to/wildplaces
+
+[TRAIN]
+num_workers = 4
+batch_size = 2048
+batch_split_size = 128
+val_batch_size = 256
+lr = 1e-3
+epochs = 100
+scheduler_milestones = 40, 80
+aug_mode = 1
+normalize_points = True
+weight_decay = 1e-4
+loss = TruncatedSmoothAP
+tau1 = 0.01
+positives_per_query = 4
+dataset_name = WildPlaces
+skip_same_run = True
+train_file = training_wild-places.pickle
+val_file = testing_wild-places.pickle
+validation = True

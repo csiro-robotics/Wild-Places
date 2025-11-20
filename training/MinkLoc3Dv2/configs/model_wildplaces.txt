@@ -1,0 +1,14 @@
+[MODEL]
+model=MinkLoc
+planes=64,128,128,128,64
+layers=1,1,1,1,1
+num_top_down=2
+conv0_kernel_size=5
+feature_size=256
+block=ECABasicBlock
+pooling=GeM
+
+coordinates=polar
+quantization_step=0.8,0.15,0.15
+
+normalize_embeddings=True
