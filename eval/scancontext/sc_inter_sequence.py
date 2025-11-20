@@ -37,6 +37,7 @@ def evaluate(log = False):
 
         temp = evaluate_dataset(database_sets, query_sets, log=log, show_progress=show_progress)
         stats[location_name] = temp
+        print_eval_stats(stats)
 
     return stats
 

@@ -19,10 +19,9 @@ def get_latent_vectors(t_set):
     
     scs, rks = [], []
     for fid in tqdm(t_set):
-        f = t_set[fid]['rel_scan_filepath']
+        f = t_set[fid]['query']
         p = os.path.join(configs.data.dataset_folder, f)
-        pcd = o3d.io.read_point_cloud(p)
-        xyz = np.asarray(pcd.points)
+        xyz = np.fromfile(p, dtype=np.float32).reshape(-1,4)[:,:3]
         sc = get_sc(xyz)
         rk = sc2rk(sc)
         scs.append(sc)
@@ -35,8 +34,8 @@ def get_latent_vectors(t_set):
 def evaluate_single_run():
     # Run evaluation on all eval datasets
     stats = pd.DataFrame(columns = ['F1max', 'R1', 'Sequence Length', 'Num. Revisits', 'Num. Correct Loc'])
-    pickles_venman = pickle.load(open(os.path.join(configs.data.evalset_folder,configs.eval.database_files[0]), 'rb'))
-    pickles_karawatha = pickle.load(open(os.path.join(configs.data.evalset_folder,configs.eval.database_files[1]), 'rb'))
+    pickles_venman = pickle.load(open(configs.eval.database_files[0], 'rb'))
+    pickles_karawatha = pickle.load(open(configs.eval.database_files[1], 'rb'))
 
     target_seq = {
         'VEN-03': pickles_venman[2],
@@ -48,7 +47,8 @@ def evaluate_single_run():
     for name, database_set in target_seq.items():
         F1max, R1, seq_len, num_revisits, num_correct_loc = get_single_run_stats(database_set, name)
         stats.loc[name] = [F1max, R1, seq_len, num_revisits, num_correct_loc]
-    
+        stats = stats.round(2)
+        print(stats)
     return stats 
 
 def euclidean_distance(query, database):
@@ -56,20 +56,13 @@ def euclidean_distance(query, database):
 
 def query_to_timestamp(query):
     base = os.path.basename(query)
-    timestamp = float(base.replace('.pcd', ''))
+    timestamp = float(base.replace('.bin', ''))
     return timestamp
 
 def get_single_run_stats(database_set, run_name, embeddings_sk = [], embeddings_rk = []):
     if len(embeddings_sk) == 0:
         embeddings_sk, embeddings_rk = get_latent_vectors(database_set) # N x D, in chronological order
-    if configs.eval.save_embeddings:
-        if not os.path.exists(configs.eval.save_embeddings):
-            os.makedirs(configs.eval.save_embeddings)
-        save_path = os.path.join(configs.eval.save_embeddings, run_name + '_sk.npy')
-        np.save(save_path, embeddings_sk)
-        save_path = os.path.join(configs.eval.save_embeddings, run_name + '_rk.npy')
-        np.save(save_path, embeddings_rk)
-    timestamps = [query_to_timestamp(database_set[k]['rel_scan_filepath']) for k in range(len(database_set.keys()))]
+    timestamps = [query_to_timestamp(database_set[k]['query']) for k in range(len(database_set.keys()))]
     coords = np.array([[database_set[k]['easting'],database_set[k]['northing']] for k in range(len(database_set.keys()))])
     start_time = timestamps[0]
 
@@ -190,7 +183,7 @@ def get_single_run_stats(database_set, run_name, embeddings_sk = [], embeddings_
     print(f'F1max: {F1max}')
 
 
-    return F1max, recall_1, len(database_set), num_revisits, num_correct_loc
+    return F1max * 100, recall_1 * 100, len(database_set), num_revisits, num_correct_loc
                     
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Evluate ScanContext model')
@@ -206,10 +199,4 @@ if __name__ == '__main__':
     # Evaluate 
     stats = evaluate_single_run()
     print(stats)
-    if args.save_dir != None:
-        if not os.path.exists(args.save_dir):
-            os.makedirs(args.save_dir)
-        stats.to_csv(os.path.join(args.save_dir, 'resutls_inrun.csv'), index = False)
-
-
 
