@@ -1,6 +1,6 @@
 
 data:
- dataset_folder: /datasets/work/d61-csirorobotics2/work/kni101/WildPlaces_v2
+ dataset_folder: /path/to/wildplaces
 eval:
   query_files: [Venman_evaluation_query.pickle, Karawatha_evaluation_query.pickle]
   database_files: [Venman_evaluation_database.pickle, Karawatha_evaluation_database.pickle]
