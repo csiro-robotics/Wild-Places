@@ -26,6 +26,7 @@ Secondly, we need to generate the pickle file containing the training splits.  T
  Now you should be ready to train the network by running `train.py` as follows:
  ```
 cd /path/to/MinkLoc3Dv2
+export PYTHONPATH=$PWD:$PYTHONPATH
 
 python training/train.py \
     --config configs/config_wildplaces.txt \
