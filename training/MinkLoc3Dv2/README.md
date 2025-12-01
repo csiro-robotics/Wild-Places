@@ -25,13 +25,10 @@ Secondly, we need to generate the pickle file containing the training splits.  T
  ## 3. Train
  Now you should be ready to train the network by running `train.py` as follows:
  ```
- _WILDPLACES_ROOT=/path/to/wildplaces
- _SAVE_DIRECTORY=/path/to/savedir
-
 cd /path/to/MinkLoc3Dv2
 
 python training/train.py \
     --config configs/config_wildplaces.txt \
     --model_config configs/model_wildplaces.txt \
-    --save_folder path/to/savedir
+    --save_folder /path/to/savedir
 ```
