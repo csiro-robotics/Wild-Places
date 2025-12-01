@@ -40,6 +40,6 @@ torchpack dist-run -np ${_NGPU} python training/train.py \
     --out_dir $_SAVE_DIRECTORY$ \
     --use_random_rotation True \
     --use_random_occlusion True \
-    --negatives_per_query 10 \
+    --negatives_per_query 18 \
  ```
- **Note**: We train LoGG3D-Net using four GPUS and 10 negative examples per query.  Depending on your available resources you may want to change these values; however, expect performance to drop if the number of GPUS or negatives is reduced.
+ **Note**: We train LoGG3D-Net using four GPUS and 18 negative examples per query.  Depending on your available resources you may want to change these values; however, expect performance to drop if the number of GPUS or negatives is reduced.
