@@ -4,6 +4,7 @@
 <div align="center">
 <a href="https://arxiv.org/abs/2211.12732"><img src='https://img.shields.io/badge/arXiv-Wild Places-red' alt='Paper PDF'></a>
 <a href='https://csiro-robotics.github.io/Wild-Places/'><img src='https://img.shields.io/badge/Project_Page-Wild Places-green' alt='Project Page'></a>
+<a href='https://huggingface.co/CSIRORobotics/Wild-Places'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Checkpoints-yellow'></a>
 <a href='https://data.csiro.au/collection/csiro:56372?q=wild-places&_st=keyword&_str=1&_si=1'><img src='https://img.shields.io/badge/Download-Wild Places-blue' alt='Project Page'></a>
 </div>
 
@@ -58,11 +59,11 @@ Here we provided pre-trained checkpoints and results for benchmarking several st
 ### Checkpoints
 |Release| Model      | Checkpoint |
 |------------|------------|------------|
-|ICRA2023| TransLoc3D | [HuggingFace](https://huggingface.co/CSIRORobotics/Wild-Places/resolve/main/ICRA_2023_checkpoints/TransLoc3D.pth)       |
-|ICRA2023| MinkLoc3DV2  | [HuggingFace](https://huggingface.co/CSIRORobotics/Wild-Places/resolve/main/ICRA_2023_checkpoints/MinkLoc3Dv2.pth)       |
-|ICRA2023| LoGG3D-Net | [HuggingFace](https://huggingface.co/CSIRORobotics/Wild-Places/resolve/main/ICRA_2023_checkpoints/LoGG3D-Net.pth)       |
-|2025 Re-Training| MinkLoc3DV2  | [HuggingFace](https://huggingface.co/CSIRORobotics/Wild-Places/resolve/main/2025_updated_checkpoints/MinkLoc3Dv2.pth)       |
-|2025 Re-Training| LoGG3D-Net  | [HuggingFace](https://huggingface.co/CSIRORobotics/Wild-Places/resolve/main/2025_updated_checkpoints/LoGG3D-Net.pth)       |
+|ICRA2023| TransLoc3D | [Link](https://huggingface.co/CSIRORobotics/Wild-Places/resolve/main/ICRA_2023_checkpoints/TransLoc3D.pth)       |
+|ICRA2023| MinkLoc3DV2  | [Link](https://huggingface.co/CSIRORobotics/Wild-Places/resolve/main/ICRA_2023_checkpoints/MinkLoc3Dv2.pth)       |
+|ICRA2023| LoGG3D-Net | [Link](https://huggingface.co/CSIRORobotics/Wild-Places/resolve/main/ICRA_2023_checkpoints/LoGG3D-Net.pth)       |
+|2025 Re-Training| MinkLoc3DV2  | [Link](https://huggingface.co/CSIRORobotics/Wild-Places/resolve/main/2025_updated_checkpoints/MinkLoc3Dv2.pth)       |
+|2025 Re-Training| LoGG3D-Net  | [Link](https://huggingface.co/CSIRORobotics/Wild-Places/resolve/main/2025_updated_checkpoints/LoGG3D-Net.pth)       |
 
 
 ### Performance
