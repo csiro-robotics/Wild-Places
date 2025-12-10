@@ -57,11 +57,13 @@ If you find this dataset helpful for your research, please cite our paper using 
 - **Oct 2022** Wild-Places v1.0 Uploaded
 - **Jan 2023** Wild-Places is accepted to ICRA2023!
 - **Jan 2023** Wild-Places v2.0 Uploaded.  This update to the dataset integrates GPS into the SLAM solution to alleviate vertical drift in the larger loops of the traversal in both environments. NOTE: Sequence K-04 is currently unavailable for v2.0 due to a failed loop closure in the ground truth.  We are currently working on remedying this, and will release the sequence as soon this issue is rectified.
-- **Feb 2025** Fix the broken timestamps in the poses files. 
+- **Feb 2025** Fix the broken timestamps in the poses files.
 - **Nov 2025** Wild-Places v3.0 Uploaded.  This update to the dataset includes:
     - Updated point clouds / trajectories using the latest version of WildCat SLAM to bring the dataset in line with the pointclouds available in the WildScenes and WildCross datasets
     - Updated benchmarking results and instructions for training on LoGG3D-Net and MinkLoc3Dv2 
     - Updated dataset and repository file structure
+    - Intensity channel has been added to submaps
+    - Providing WildCross branch LPR splits 
 
 
 ## Download Instructions
