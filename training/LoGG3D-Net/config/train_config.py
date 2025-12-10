@@ -118,7 +118,7 @@ data_arg.add_argument('--use_random_scale', type=str2bool, default=False)
 data_arg.add_argument('--min_scale', type=float, default=0.8)
 data_arg.add_argument('--max_scale', type=float, default=1.2)
 
-data_arg.add_argument('--wildplaces_dir', type=str, default='/datasets/work/d61-publicdatasets/source/Wild-Places')
+data_arg.add_argument('--wildplaces_dir', type=str, default='')
 data_arg.add_argument('--ugv_dir', type=str, default='')
 data_arg.add_argument('--apollo_dir', type=str, default='')
 data_arg.add_argument('--bushwalk_dir', type=str, default='')
