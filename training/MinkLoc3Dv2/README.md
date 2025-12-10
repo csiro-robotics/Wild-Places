@@ -1,5 +1,8 @@
 # Training on LoGG3D-Net
 This folder contains the code needed to train MinkLoc3Dv2 on the Wild-Places dataset
+
+**Note: If you are reading this, you are on the WildCross branch and will be using the WildCross crossfold training splits.  Make sure that this is what you want!**
+
 To set up training, the following steps need to be taken:
 
 ## 1. Clone and copy files
@@ -15,8 +18,8 @@ Secondly, we need to generate the pickle file containing the training splits.  T
 ```
  cd /path/to/MinkLoc3Dv2
  export PYTHONPATH=$PWD:$PYTHONPATH 
- python datasets/wildplaces/make_train_tuples.py \
-    --dataset_root /path/to/wildplaces/root \
+ python datasets/wildplaces/make_train_tuples_wildcross.py \
+    --dataset_root /path/to/wildcross/root \
     --save_folder pickles 
  ```
 

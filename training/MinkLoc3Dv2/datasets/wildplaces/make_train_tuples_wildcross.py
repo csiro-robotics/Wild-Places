@@ -7,7 +7,8 @@ import argparse
 from tqdm import tqdm 
 from scipy.spatial.transform import Rotation as R
 
-from utils.data_loaders.general.general_dataset import TrainingTuple
+from datasets.base_datasets import TrainingTuple
+
 
 _OFFSET = 2000
 
@@ -40,14 +41,8 @@ def construct_query_dict(df_centroids, filepaths, save_path, ind_nn_r, ind_r_r):
         positives = np.sort(positives)
         non_negatives = np.sort(non_negatives)
 
-        # Get rotmat 
-        pose_rotmat = np.eye(4)
-        pose_rotmat[:3,3] = pose[:3]
-        pose_rotmat[:3,:3] = R.from_quat(pose[3:]).as_matrix()
-
-        # Tuple(id: int, timestamp: str, rel_scan_filepath: str, positives: List[int], non_negatives: List[int])
         tt = TrainingTuple(id=anchor_ndx, timestamp=timestamp, rel_scan_filepath=query,
-                                            positives=positives, non_negatives=non_negatives, pose = pose_rotmat)
+                                            positives=positives, non_negatives=non_negatives, position = anchor_pos)
         queries[anchor_ndx] = tt
 
     file_path = save_path
