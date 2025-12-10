@@ -18,5 +18,5 @@ positives_per_query = 4
 dataset_name = WildPlaces
 skip_same_run = True
 train_file = pickles/training_wild-places_3_20.pickle
-val_file = pickles/testing_wild-places_3_20.pickle
-validation = True
+val_file = ''
+validation = False
