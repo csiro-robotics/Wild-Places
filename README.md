@@ -8,6 +8,24 @@
 <a href='https://data.csiro.au/collection/csiro:56372?q=wild-places&_st=keyword&_str=1&_si=1'><img src='https://img.shields.io/badge/Download-Wild Places-blue' alt='Project Page'></a>
 </div>
 
+<!-- markdownlint-disable first-line-h1 -->
+<!-- markdownlint-disable html -->
+<!-- markdownlint-disable no-duplicate-header -->
+
+<p align="center">
+  <a href="https://github.com/csiro-robotics/Wild-Places/commits/main">
+    <img src="https://img.shields.io/github/last-commit/csiro-robotics/Wild-Places" alt="Last Commit" />
+  </a>
+  <a href="https://github.com/csiro-robotics/Wild-Places/issues">
+    <img src="https://img.shields.io/github/issues/csiro-robotics/Wild-Places" alt="Issues" />
+  </a>
+  <a href="https://github.com/csiro-robotics/Wild-Places/pulls">
+    <img src="https://img.shields.io/github/issues-pr/csiro-robotics/Wild-Places" alt="Pull Requests" />
+  </a>
+  <a href="https://github.com/csiro-robotics/Wild-Places/stargazers">
+    <img src="https://img.shields.io/github/stars/csiro-robotics/Wild-Places?style=social" alt="Stars" />
+  </a>
+</p>
 
 This repository contains the code implementation used in the paper *Wild-Places: A Large-Scale Dataset for Lidar Place Recognition in Unstructured Natural Environments*, which has been published at ICRA2023.  
 
