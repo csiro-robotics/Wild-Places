@@ -41,7 +41,7 @@ If you find this dataset helpful for your research, please cite our paper using 
 - **Jan 2023** Wild-Places v2.0 Uploaded.  This update to the dataset integrates GPS into the SLAM solution to alleviate vertical drift in the larger loops of the traversal in both environments. NOTE: Sequence K-04 is currently unavailable for v2.0 due to a failed loop closure in the ground truth.  We are currently working on remedying this, and will release the sequence as soon this issue is rectified.
 - **Feb 2025** Fix the broken timestamps in the poses files. 
 - **Nov 2025** Wild-Places v3.0 Uploaded.  This update to the dataset includes:
-    - Updated point clouds / trajectories using the latest version of WildCat to bring the dataset in line with the pointclouds available in the WildScenes and WildCross datasets
+    - Updated point clouds / trajectories using the latest version of WildCat SLAM to bring the dataset in line with the pointclouds available in the WildScenes and WildCross datasets
     - Updated benchmarking results and instructions for training on LoGG3D-Net and MinkLoc3Dv2 
     - Updated dataset and repository file structure
 
@@ -54,17 +54,22 @@ Our dataset can be downloaded through [The CSIRO Data Access Portal](https://dat
 ## Benchmarking
 Here we provided pre-trained checkpoints and results for benchmarking several state-of-the-art LPR methods on the Wild-Places dataset.
 
-**Update Nov. 2025**:  With the release of Wild-Places v3.0, we have also re-run training for two state-of-the-art methods (LoGG3D-Net, MinkLoc3Dv2) on the Wild-Places dataset using expanded batch sizes to provide new training checkpoints which better reflect the capabilities of recent state-of-the-art GPUs.  We provide checkpoints and benchmarked results for both the recently trained models and the checkpoints released with the ICRA2023 paper.
+**Update Nov. 2025**:  With the release of Wild-Places v3.0, we have also re-run training for two state-of-the-art methods (LoGG3D-Net, MinkLoc3Dv2) on the Wild-Places dataset using expanded batch sizes to provide new training checkpoints which better reflect the capabilities of recent state-of-the-art GPUs.  We provide checkpoints and benchmarked results for both the recently trained models (2025) and the checkpoints released with the ICRA2023 paper.
 
-### Checkpoints
-|Release| Model      | Checkpoint |
+
+### Pre-trained Model Checkpoints
+
+<div align="center">
+
+|**Release**| **Model**      | **Checkpoint** |
 |------------|------------|------------|
-|ICRA2023| TransLoc3D | [Link](https://huggingface.co/CSIRORobotics/Wild-Places/resolve/main/ICRA_2023_checkpoints/TransLoc3D.pth)       |
-|ICRA2023| MinkLoc3DV2  | [Link](https://huggingface.co/CSIRORobotics/Wild-Places/resolve/main/ICRA_2023_checkpoints/MinkLoc3Dv2.pth)       |
-|ICRA2023| LoGG3D-Net | [Link](https://huggingface.co/CSIRORobotics/Wild-Places/resolve/main/ICRA_2023_checkpoints/LoGG3D-Net.pth)       |
-|2025 Re-Training| MinkLoc3DV2  | [Link](https://huggingface.co/CSIRORobotics/Wild-Places/resolve/main/2025_updated_checkpoints/MinkLoc3Dv2.pth)       |
-|2025 Re-Training| LoGG3D-Net  | [Link](https://huggingface.co/CSIRORobotics/Wild-Places/resolve/main/2025_updated_checkpoints/LoGG3D-Net.pth)       |
+|ICRA2023| TransLoc3D |  [🤗 HuggingFace](https://huggingface.co/CSIRORobotics/Wild-Places/resolve/main/ICRA_2023_checkpoints/TransLoc3D.pth)       |
+|ICRA2023| MinkLoc3DV2  | [🤗 HuggingFace](https://huggingface.co/CSIRORobotics/Wild-Places/resolve/main/ICRA_2023_checkpoints/MinkLoc3Dv2.pth)       |
+|ICRA2023| LoGG3D-Net |  [🤗 HuggingFace](https://huggingface.co/CSIRORobotics/Wild-Places/resolve/main/ICRA_2023_checkpoints/LoGG3D-Net.pth)       |
+|2025 Re-Training| MinkLoc3DV2  |  [🤗 HuggingFace](https://huggingface.co/CSIRORobotics/Wild-Places/resolve/main/2025_updated_checkpoints/MinkLoc3Dv2.pth)       |
+|2025 Re-Training| LoGG3D-Net  | [🤗 HuggingFace](https://huggingface.co/CSIRORobotics/Wild-Places/resolve/main/2025_updated_checkpoints/LoGG3D-Net.pth)       |
 
+</div>
 
 ### Performance
 ![](./utils/docs/nov2025_wildplaces_benchmarking_results.png)
