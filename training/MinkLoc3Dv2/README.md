@@ -1,4 +1,4 @@
-# Training on LoGG3D-Net
+# Training on MinkLoc3Dv2
 This folder contains the code needed to train MinkLoc3Dv2 on the Wild-Places dataset
 To set up training, the following steps need to be taken:
 
