@@ -27,5 +27,5 @@ positives_per_query = 4
 
 dataset_name = WildCross
 skip_same_run = True
-train_file = /scratch3/kni101/work/HOTFormerLoc/pickles/training_wildcross_qidx0.pickle
+train_file = /where/you/save/picklefiles/training_wildcross_qidx<split_idx>.pickle
 validation = False
