@@ -60,32 +60,32 @@ def construct_query_dict(df_centroids, filepaths, save_path, ind_nn_r, ind_r_r):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--root', type=str, required=True)
-    parser.add_argument('--save_dir', type=str, required=True)
-    parser.add_argument('--pos_thresh', type=float, default=3)
-    parser.add_argument('--neg_thresh', type=float, default=20)
+    parser.add_argument('--dataset_root', type = str, required = True, help = 'Dataset root folder')
+    parser.add_argument('--save_folder', type = str, required = True, help = 'Folder to save training pickles to')
+    parser.add_argument('--pos_thresh', type = float, default = 3, help  = 'Threshold to sample positives within')
+    parser.add_argument('--neg_thresh', type = float, default = 20, help = 'Threshold to sample negative within')
     args = parser.parse_args()
     
-    assert os.path.exists(args.root), f"Cannot access dataset root folder: {args.root}"
-    print(f'Dataset root: {args.root}')
+    assert os.path.exists(args.dataset_root), f"Cannot access dataset root folder: {args.dataset_root}"
+    print(f'Dataset root: {args.dataset_root}')
 
-    args.save_dir = args.root if args.save_dir is None else args.save_dir
-    print(f'Saving pickles to: {args.save_dir}')
+    args.save_folder = args.dataset_root if args.save_folder is None else args.save_folder
+    print(f'Saving pickles to: {args.save_folder}')
     
-    os.makedirs(args.save_dir, exist_ok=True)
+    os.makedirs(args.save_folder, exist_ok=True)
 
     for split_idx in [0,1,2,3]:    
         # Venman 
         venman_seqs = ['V-01','V-02','V-03','V-04']
         venman_seqs.pop(split_idx)
         df_venman = pd.concat([
-            pd.read_csv(os.path.join(args.root, seq, 'submap_poses.csv'))
+            pd.read_csv(os.path.join(args.dataset_root, seq, 'submap_poses.csv'))
             for seq in venman_seqs], axis=0
         )
         venman_filepaths = []
         for seq in venman_seqs:
             seq_filepaths = [os.path.join(seq, 'Clouds_downsampled',x ) 
-                            for x in sorted(os.listdir(os.path.join(args.root, seq, 'Clouds_downsampled')))]
+                            for x in sorted(os.listdir(os.path.join(args.dataset_root, seq, 'Clouds_downsampled')))]
             venman_filepaths += seq_filepaths
         assert len(venman_filepaths) == len(df_venman)
         
@@ -93,14 +93,14 @@ if __name__ == '__main__':
         karawatha_seqs = ['K-01','K-02','K-03','K-04']
         karawatha_seqs.pop(split_idx)
         df_karawatha = pd.concat([
-            pd.read_csv(os.path.join(args.root, seq, 'submap_poses.csv'))
+            pd.read_csv(os.path.join(args.dataset_root, seq, 'submap_poses.csv'))
             for seq in karawatha_seqs], axis=0
         )
         df_karawatha[['x','y']] += _OFFSET
         karawatha_filepaths = []
         for seq in karawatha_seqs:
             seq_filepaths = [os.path.join(seq, 'Clouds_downsampled',x ) 
-                            for x in sorted(os.listdir(os.path.join(args.root, seq, 'Clouds_downsampled')))]
+                            for x in sorted(os.listdir(os.path.join(args.dataset_root, seq, 'Clouds_downsampled')))]
             karawatha_filepaths += seq_filepaths
         assert len(karawatha_filepaths) == len(df_karawatha)
         
@@ -113,6 +113,6 @@ if __name__ == '__main__':
         print(f"Total: {df_train} Training Submaps")
         
         construct_query_dict(df_train, filepaths_train,
-                            os.path.join(args.save_dir, f"training_wildcross_split_idx{split_idx}.pickle"),
+                            os.path.join(args.save_folder, f"training_wildcross_split_idx{split_idx}.pickle"),
                             ind_nn_r=args.pos_thresh, ind_r_r=args.neg_thresh)
         

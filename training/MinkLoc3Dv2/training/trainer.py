@@ -162,7 +162,7 @@ def do_train(params: TrainingParams):
     print('Model device: {}'.format(device))
 
     # set up dataloaders
-    dataloaders = make_dataloaders(params)
+    dataloaders = make_dataloaders(params, params.validation)
 
     loss_fn = make_losses(params)
 

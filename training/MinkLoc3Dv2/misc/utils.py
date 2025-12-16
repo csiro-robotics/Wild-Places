@@ -123,6 +123,7 @@ class TrainingParams:
             self.batch_size_limit = self.batch_size
             self.batch_expansion_rate = None
 
+        self.validation = params.getboolean('validation', False)
         self.val_batch_size = params.getint('val_batch_size', self.batch_size_limit)
 
         self.lr = params.getfloat('lr', 1e-3)
