@@ -1,0 +1,31 @@
+[DEFAULT]
+# Follow README instructions to install dataset
+dataset_folder = /path/to/wildcross
+
+[TRAIN]
+num_workers = 4
+batch_size = 2048
+batch_split_size = 96
+val_batch_size = 128
+save_freq = 10
+eval_freq = 5
+wandb = True
+
+lr = 3e-3
+epochs = 80
+scheduler_milestones = 30
+warmup_epochs = 5
+aug_mode = 2
+set_aug_mode = 2
+random_rot_theta = 180
+normalize_points = True
+octree_depth = 7
+weight_decay = 1e-4
+loss = TruncatedSmoothAP
+tau1 = 0.01
+positives_per_query = 4
+
+dataset_name = WildCross
+skip_same_run = True
+train_file = /scratch3/kni101/work/HOTFormerLoc/pickles/training_wildcross_qidx0.pickle
+validation = False
