@@ -41,9 +41,9 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     venman_info = construct_testing_pickles(args.dataset_root, ['V-01','V-02','V-03','V-04'])
-    with open(os.path.join(args.save_dir, "venman_testing_info.pickle"), 'wb') as f:
+    with open(os.path.join(args.save_folder, "venman_testing_info.pickle"), 'wb') as f:
         pickle.dump(venman_info, f)
 
     karawatha_info = construct_testing_pickles(args.dataset_root, ['K-01','K-02','K-03','K-04'])
-    with open(os.path.join(args.save_dir, "karawatha_testing_info.pickle"), 'wb') as f:
+    with open(os.path.join(args.save_folder, "karawatha_testing_info.pickle"), 'wb') as f:
         pickle.dump(karawatha_info, f)
