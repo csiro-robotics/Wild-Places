@@ -11,7 +11,7 @@ import torch
 from torchsparse import SparseTensor
 from torchsparse.utils.quantize import sparse_quantize
 from torchsparse.utils.collate import sparse_collate
-import tqdm
+from tqdm import tqdm
 
 # Make sure to export python path to LoGG3D-Net repository before importing this script
 from models.pipeline_factory import get_pipeline
@@ -23,7 +23,7 @@ def load_model():
 
 def get_latent_vectors(model, data, dataset_root):
     vectors = []
-    for query_info in data.values():
+    for query_info in tqdm(data.values(), "extracting latents", len(data.values())):
         fname = os.path.join(dataset_root, query_info['query'])
         sp_tensor = load_pointcloud(fname)
         sp_tensor = sp_tensor.to('cuda')
