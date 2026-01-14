@@ -106,7 +106,7 @@ class Evaluator:
     def get_descriptors_positions(self):
         seq_data = self.env_data[self.split_idx]
         seq_name = seq_data[0]['seq_name']
-        descriptors = self.get_latent_vectors(seq_data, seq_name, debug=self.debug)
+        descriptors = self.get_latent_vectors(seq_data, seq_name, self.params, debug=self.debug)
         positions = self.get_positions(seq_data)
         seq_timestamps = torch.tensor([v['timestamp'] for v in seq_data.values()])
 

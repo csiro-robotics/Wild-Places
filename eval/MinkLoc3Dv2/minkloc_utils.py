@@ -3,6 +3,7 @@ import os
 import MinkowskiEngine as ME
 import numpy as np
 import torch
+from tqdm import tqdm
 
 # Make sure to export python path to MinkLoc3Dv2 repository before importing this script
 from misc.utils import TrainingParams
@@ -22,7 +23,7 @@ def load_model(params):
 
 def get_latent_vectors(model, data, params: TrainingParams):
     vectors = []
-    for query_info in data.values():
+    for query_info in tqdm(data.values(), "extracting latents", len(data.values())):
         fname = os.path.join(params.dataset_folder, query_info['query'])
         pc = load_pointcloud(fname)
 

@@ -96,6 +96,7 @@ class Evaluator:
         
         # Save latent vectors if debug is True and save dir has been specified
         if debug and self.save_dir:
+            print("Debug mode! Saving latent vectors")
             with open(vectors_save_path, 'wb') as handle:
                 pickle.dump(vectors, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
@@ -103,7 +104,7 @@ class Evaluator:
     
     def get_positions(self, seq_data):
         positions = []
-        for i in range(len(seq_data)):
+        for i in tqdm(range(len(seq_data)), "getting positions", len(seq_data)):
             positions.append([seq_data[i]['easting'], seq_data[i]['northing']])
         positions = torch.tensor(positions).float()
         return positions 
@@ -112,6 +113,7 @@ class Evaluator:
     def get_descriptors_positions(self):
         all_sequence_info = []
         for idx in range(len(self.env_data)):
+            print(f"Sequence {idx}")
             seq_name = self.env_data[idx][0]['seq_name']
             descriptors = self.get_latent_vectors(self.env_data[idx], seq_name, self.params, debug=self.debug)
             positions = self.get_positions(self.env_data[idx])
@@ -163,7 +165,10 @@ if __name__ == '__main__':
 
     assert len(args.test_pickle_files) == len(args.location_names)
 
+    print("Entering Evlauation")
+
     for pickle_file, location_name in zip(args.test_pickle_files, args.location_names):
+        print(f"LOCATION: {location_name}")
         evaluator = Evaluator(model, pickle_file, args.split_idx, args.dataset_root, args.save_dir, params, args.debug)
         df_env_results = evaluator.run()
         print(df_env_results)
