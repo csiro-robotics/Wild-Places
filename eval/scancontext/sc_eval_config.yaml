@@ -1,9 +1,0 @@
-
-data:
- dataset_folder: /path/to/wildplaces
-eval:
-  query_files: [Venman_evaluation_query.pickle, Karawatha_evaluation_query.pickle]
-  database_files: [Venman_evaluation_database.pickle, Karawatha_evaluation_database.pickle]
-  location_names: [Venman, Karawatha]
-  world_thresh: 3
-  time_thresh: 600
