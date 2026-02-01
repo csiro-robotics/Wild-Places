@@ -304,21 +304,6 @@ def do_train(params: TrainingParams):
     print(f"Saving weights: {final_model_path}")
     torch.save(model.state_dict(), final_model_path)
 
-    # Evaluate the final
-    # PointNetVLAD datasets evaluation protocol
-    stats = evaluate(model, device, params, log=False)
-    print_eval_stats(stats)
-
-    print('.')
-
-    # Append key experimental metrics to experiment summary file
-    model_params_name = os.path.split(params.model_params.model_params_path)[1]
-    config_name = os.path.split(params.params_path)[1]
-    model_name = os.path.splitext(os.path.split(final_model_path)[1])[0]
-    prefix = "{}, {}, {}".format(model_params_name, config_name, model_name)
-
-    pnv_write_eval_stats("pnv_experiment_results.txt", prefix, stats)
-
 
 def create_weights_folder():
     # Create a folder to save weights of trained models
