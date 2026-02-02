@@ -130,12 +130,12 @@ python minkloc_inter_sequence_wildcross.py \
 #### __Intra-run Evaluation__
 ```
 python minkloc_intra_sequence_wildcross.py \
-    --test_pickle_files /pickle/save/dir/venman_testing_info.pickle /pickle/save/dir/karawatha_testing_info.pickle \
+    --test_pickle_files ../generate_splits/venman_testing_info.pickle ../generate_splits/karawatha_testing_info.pickle \
     --location_names Venman Karawatha \
-    --save_dir /path/to/results/save/dir \
-    --split_idx CROSSFOLD_SPLIT_IDX \
-    --ckpt /path/to/pretrained/ckpt.pth \
-    --dataset_root /path/to/wildcross/root \
-    --config /MinkLoc3Dv2/save/dir/configs/config_wildplaces.txt \
-    --model_config /MinkLoc3Dv2/save/dir/configs/model_wildplaces.txt
+    --save_dir $_PATH_TO_SAVE_EVAL_RESULTS \
+    --split_idx _SPLIT_IDX \
+    --ckpt $_PATH_TO_MODEL_CHECKPOINT \
+    --dataset_root $_PATH_TO_WILDCROSS_DATABASE \
+    --config $MINKLOC_PATH/configs/config_wildplaces.txt \
+    --model_config $MINKLOC_PATH/configs/model_wildplaces.txt
 ```
