@@ -4,7 +4,7 @@ import os
 import numpy as np 
 import pandas as pd 
 from misc.utils import TrainingParams
-from eval_wp.dataloader import get_descriptions_positions
+from eval_wildcross.dataloader import get_descriptions_positions
 from models.model_factory import model_factory
 import pickle 
 from tqdm import tqdm 
@@ -13,7 +13,7 @@ import faiss.contrib.torch_utils
 
 class Evaluator:
     def __init__(self, model, env_pickle_file, params, query_idx, debug=False):
-        self.pos_thresh = 25.0 
+        self.pos_thresh = 3.0 
         self.time_thresh = 600.0
         self.recall_values = list(range(1,26))
         self.params = params 

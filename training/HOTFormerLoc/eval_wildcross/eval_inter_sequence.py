@@ -4,7 +4,7 @@ import os
 import numpy as np 
 import pandas as pd 
 from misc.utils import TrainingParams
-from eval_wp.dataloader import get_descriptions_positions
+from eval_wildcross.dataloader import get_descriptions_positions
 from models.model_factory import model_factory
 import pickle 
 from tqdm import tqdm 
