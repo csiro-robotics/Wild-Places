@@ -72,7 +72,7 @@ if __name__ == '__main__':
     venman_seqs = ['V-01','V-02','V-03','V-04']
     venman_seqs.pop(args.query_idx)
     df_venman = pd.concat([
-        pd.read_csv(os.path.join(args.root, seq, 'submap_poses_aligned.csv'))
+        pd.read_csv(os.path.join(args.root, seq, 'submap_poses.csv'))
         for seq in venman_seqs], axis=0
     )
     venman_filepaths = []
@@ -86,7 +86,7 @@ if __name__ == '__main__':
     karawatha_seqs = ['K-01','K-02','K-03','K-04']
     karawatha_seqs.pop(args.query_idx)
     df_karawatha = pd.concat([
-        pd.read_csv(os.path.join(args.root, seq, 'submap_poses_aligned.csv'))
+        pd.read_csv(os.path.join(args.root, seq, 'submap_poses.csv'))
         for seq in karawatha_seqs], axis=0
     )
     df_karawatha[['x','y']] += _OFFSET
