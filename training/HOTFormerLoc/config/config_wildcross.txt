@@ -5,10 +5,10 @@ dataset_folder = /path/to/wildcross
 [TRAIN]
 num_workers = 4
 batch_size = 2048
-batch_split_size = 96
-val_batch_size = 128
+batch_split_size = 256
+val_batch_size = 32
 save_freq = 10
-eval_freq = 5
+eval_freq = 0
 wandb = True
 
 lr = 3e-3

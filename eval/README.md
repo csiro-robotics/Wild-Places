@@ -177,4 +177,4 @@ python hotformerloc_intra_sequence_wildcross.py \
     --model_config $HOTFORMERLOC_PATH/models/model_wildcross.txt
 ```
 
-Note that you can adjust the `val_batch_size` and `num_workers` in the `config_wildcross.txt` file to suit your system (necessary if you receive a CUDA out of memory error).
+Note that you can adjust the `val_batch_size` and `num_workers` in the `config_wildcross.txt` file to suit your system (necessary if you receive a CUDA out of memory error). Be aware that adjusting `val_batch_size` may slightly alter results due to the octree batch construction process.
