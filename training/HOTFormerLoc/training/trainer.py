@@ -532,11 +532,12 @@ class NetworkTrainer:
             final_model_path = self.model_pathname + '_final.ckpt'
             self.save_checkpoint(final_model_path)
 
-        # Evaluate the final
-        # PointNetVLAD datasets evaluation protocol
-        stats = evaluate(self.model, self.device, self.params, log=False,
-                         show_progress=self.params.verbose)
-        print_eval_stats(stats)
+        # COMMENTED OUT AS WILD-CROSS IS NOT FORMATTED FOR HOTFORMERLOC EVAL FUNC
+        # # Evaluate the final
+        # # PointNetVLAD datasets evaluation protocol
+        # stats = evaluate(self.model, self.device, self.params, log=False,
+        #                  show_progress=self.params.verbose)
+        # print_eval_stats(stats)
 
         print('.')
 
