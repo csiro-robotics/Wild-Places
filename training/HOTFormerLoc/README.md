@@ -23,7 +23,7 @@ Secondly, we need to generate the pickle file containing the training splits.  T
     --save_folder pickles 
  ```
 
- In addition, edit the file `configs/config_wildcross.txt` so that `dataset_folder` is set to the path to Wild-Cross on your machine and `train_file` is set to the path of a pickle file generated above.
+ In addition, edit the file `config/config_wildcross.txt` so that `dataset_folder` is set to the path to Wild-Cross on your machine and `train_file` is set to the path of a pickle file generated above.
 
  ## 3. Train
  Now you should be ready to train the network by running `train.py` as follows:
@@ -32,11 +32,15 @@ cd /path/to/HOTFormerLoc
 export PYTHONPATH=$PWD:$PYTHONPATH
 
 python training/train.py \
-    --config configs/config_wildcross.txt \
-    --model_config configs/hotformerloc_wildcross_cfg.txt \
+    --config config/config_wildcross.txt \
+    --model_config config/hotformerloc_wildcross_cfg.txt \
     --save_dir /path/to/savedir
 ```
 
 If you run into CUDA out-of-memory errors, you may need to decrease `batch_split_size` in the config file. This should not impact model performance. If running out of RAM or SHM, you may need to decrease num_workers.
 
 In our experiments, we use the checkpoint from 40 training epochs (will be saved as `model_e40.ckpt`).
+
+## 4. Evaluation
+
+See `Wild-Places/eval/` for evaluation instructions.
