@@ -539,16 +539,16 @@ class NetworkTrainer:
         #                  show_progress=self.params.verbose)
         # print_eval_stats(stats)
 
-        print('.')
+        # print('.')
 
-        # Append key experimental metrics to experiment summary file
-        if not self.params.debug:
-            model_params_name = os.path.split(self.params.model_params.model_params_path)[1]
-            config_name = os.path.split(self.params.params_path)[1]
-            model_name = os.path.splitext(os.path.split(final_model_path)[1])[0]
-            prefix = "{}, {}, {}".format(model_params_name, config_name, model_name)
+        # # Append key experimental metrics to experiment summary file
+        # if not self.params.debug:
+        #     model_params_name = os.path.split(self.params.model_params.model_params_path)[1]
+        #     config_name = os.path.split(self.params.params_path)[1]
+        #     model_name = os.path.splitext(os.path.split(final_model_path)[1])[0]
+        #     prefix = "{}, {}, {}".format(model_params_name, config_name, model_name)
 
-            pnv_write_eval_stats(f"pnv_{self.params.dataset_name}_results.txt", prefix, stats)        
+        #     pnv_write_eval_stats(f"pnv_{self.params.dataset_name}_results.txt", prefix, stats)        
 
         # Return optimization value (to minimize)
         return (1 - self.best_avg_AR_1/100.0)
