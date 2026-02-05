@@ -38,3 +38,5 @@ python training/train.py \
 ```
 
 If you run into CUDA out-of-memory errors, you may need to decrease `batch_split_size` in the config file. This should not impact model performance. If running out of RAM or SHM, you may need to decrease num_workers.
+
+In our experiments, we use the checkpoint from 40 training epochs (will be saved as `model_e40.ckpt`).
