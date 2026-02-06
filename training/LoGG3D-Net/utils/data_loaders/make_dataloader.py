@@ -14,7 +14,7 @@ ALL_DATASETS = [
     MulRanDataset, MulRanTupleDataset, MulRanSparseTupleDataset, MulRanPointSparseTupleDataset
 ]
 dataset_str_mapping = {d.__name__: d for d in ALL_DATASETS}
-dataset_str_mapping['wildplaces'] = GeneralPointSparseTupleDataset
+dataset_str_mapping['wildcross'] = GeneralPointSparseTupleDataset
 
 
 class RandomSampler(Sampler):

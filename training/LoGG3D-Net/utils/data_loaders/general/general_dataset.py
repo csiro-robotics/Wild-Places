@@ -113,7 +113,7 @@ class GeneralDataset(PointCloudDataset):
                             "ugv" : config.ugv_dir,
                             "apollo" : config.apollo_dir,
                             "bushwalk" : config.bushwalk_dir,
-                            "wildplaces": config.wildplaces_dir}
+                            "wildcross": config.wildcross_dir}
 
         self.train_pickles = config.train_pickles
         self.pnv_prep = config.pnv_preprocessing
@@ -136,7 +136,7 @@ class GeneralDataset(PointCloudDataset):
     def get_pointcloud_tensor(self, base_dir, rel_path, dataset):
         fname = os.path.join(base_dir, rel_path)
         
-        if self.dataset == "wildplaces":
+        if self.dataset == "wildcross":
             xyz = np.fromfile(fname, dtype=np.float32).reshape(-1,4)[:,:3]
             pcd = make_open3d_point_cloud(xyz)
         else:
@@ -190,7 +190,7 @@ class GeneralTupleDataset(GeneralDataset):
                             "ugv" : config.ugv_dir,
                             "apollo" : config.apollo_dir,
                             "bushwalk" : config.bushwalk_dir,
-                            "wildplaces": config.wildplaces_dir}
+                            "wildcross": config.wildcross_dir}
 
         self.train_pickles = config.train_pickles
         self.positives_per_query = config.positives_per_query
