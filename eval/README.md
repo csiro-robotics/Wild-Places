@@ -14,7 +14,13 @@ This should generate a number of pickle files which contain the necessary inform
 
 ## Running evaluation
 We provide scripts for running inter and intra-sequence evaluation on WildCross.
-This comprises both generalised evaluation scripts (for custom methods) as well as scripts designed to replicate our evaluation process for for LoGG3D-Net and MinkLoc3Dv2.
+This comprises both generalised evaluation scripts (for custom methods) as well as scripts designed to replicate our evaluation process for for LoGG3D-Net, MinkLoc3Dv2, and HOTFormerLoc.
+
+If you save all evaluation outputs for inter-sequence evaluation into a single folder, you can also get the crossfold average results by calling:
+
+```
+python eval/get_crossfold_averages.py --root_dir /path/to/evaluation/outputs
+```
 
 ### Generalised Evaluation Process
 We provide the template for a generic evaluation script for inter and intra-sequence place recognition.  
