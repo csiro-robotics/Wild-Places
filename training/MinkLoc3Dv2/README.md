@@ -23,7 +23,7 @@ Secondly, we need to generate the pickle file containing the training splits.  T
     --save_folder pickles 
  ```
 
- In addition, edit the file `configs/config_wildcross.txt` so that `dataset_folder` is set to the path to Wild-Places on your machine and `train_file` is set to the path to a pickle file generated above.
+ In addition, edit the file `configs/config_wildcross.txt` so that `dataset_folder` is set to the path to WildCross on your machine and `train_file` is set to the path to a pickle file generated above.
 
  ## 3. Train
  Now you should be ready to train the network by running `train.py` as follows:

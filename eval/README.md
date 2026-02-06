@@ -51,7 +51,7 @@ Where:
 - `_PATH_TO_WILDCROSS_DATABASE` is a string pointing to the location of the WildCross dataset
 
 #### __Intra-run Evaluation__
-To perform intra-run evaluation on the Wild-Places dataset, run the following command:
+To perform intra-run evaluation on the WildCross dataset, run the following command:
 ```
 python eval/intra-sequence-wildcross.py \
     --test_pickle_files $_PATH_TO_TEST_PICKLE_FILES \
@@ -123,8 +123,8 @@ python minkloc_inter_sequence_wildcross.py \
     --split_idx _SPLIT_IDX \
     --ckpt $_PATH_TO_MODEL_CHECKPOINT \
     --dataset_root $_PATH_TO_WILDCROSS_DATABASE \
-    --config $MINKLOC_PATH/configs/config_wildplaces.txt \
-    --model_config $MINKLOC_PATH/configs/model_wildplaces.txt
+    --config $MINKLOC_PATH/configs/config_wildcross.txt \
+    --model_config $MINKLOC_PATH/configs/model_wildcross.txt
 ```
 
 #### __Intra-run Evaluation__
@@ -136,8 +136,8 @@ python minkloc_intra_sequence_wildcross.py \
     --split_idx _SPLIT_IDX \
     --ckpt $_PATH_TO_MODEL_CHECKPOINT \
     --dataset_root $_PATH_TO_WILDCROSS_DATABASE \
-    --config $MINKLOC_PATH/configs/config_wildplaces.txt \
-    --model_config $MINKLOC_PATH/configs/model_wildplaces.txt
+    --config $MINKLOC_PATH/configs/config_wildcross.txt \
+    --model_config $MINKLOC_PATH/configs/model_wildcross.txt
 ```
 
 ### HOTFormerLoc

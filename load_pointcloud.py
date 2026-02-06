@@ -3,7 +3,7 @@ import numpy as np
 
 def load_pointcloud(pointcloud_path, keep_intensity_channel=False):
     '''
-    Load WildPlaces point cloud from disk
+    Load WildCross point cloud from disk
     Arguments:
     - pointcloud_path : Path to pointcloud to load
     - keep_intensity_channel : Whether or not to keep the intensity channel for the loaded pointcloud
