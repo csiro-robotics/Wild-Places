@@ -1,8 +1,8 @@
 [DEFAULT]
-dataset_folder = /path/to/wildplaces
+dataset_folder = /path/to/wildcross
 
 [TRAIN]
-num_workers = 4
+num_workers = 8
 batch_size = 2048
 batch_split_size = 128
 val_batch_size = 256
@@ -15,7 +15,7 @@ weight_decay = 1e-4
 loss = TruncatedSmoothAP
 tau1 = 0.01
 positives_per_query = 4
-dataset_name = wildplaces
+dataset_name = wildcross
 train_file = /path/to/pickle
 val_file = ''
 validation = False

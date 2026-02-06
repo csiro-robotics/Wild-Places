@@ -14,8 +14,8 @@ from datasets.pointnetvlad.pnv_train import PNVTrainingDataset
 from datasets.pointnetvlad.pnv_train import TrainTransform as PNVTrainTransform
 
 
-from datasets.wildplaces.wildplaces_train import WildPlacesTrainingDataset
-from datasets.wildplaces.wildplaces_train import TrainTransform as WildPlacesTrainTransform
+from datasets.wildcross.wildcross_train import WildCrossTrainingDataset
+from datasets.wildcross.wildcross_train import TrainTransform as WildCrossTrainTransform
 
 from datasets.samplers import BatchSampler
 from misc.utils import TrainingParams
@@ -43,12 +43,12 @@ def make_datasets(params: TrainingParams, validation: bool = True):
         if validation:
             datasets['val'] = PNVTrainingDataset(params.dataset_folder, params.val_file)
 
-    elif params.dataset_name == 'wildplaces':
-        train_transform = WildPlacesTrainTransform(params.aug_mode)
-        datasets['train'] = WildPlacesTrainingDataset(params.dataset_folder, params.train_file,
+    elif params.dataset_name == 'wildcross':
+        train_transform = WildCrossTrainTransform(params.aug_mode)
+        datasets['train'] = WildCrossTrainingDataset(params.dataset_folder, params.train_file,
                                             transform=train_transform, set_transform=train_set_transform)
         if validation:
-            datasets['val'] = WildPlacesTrainingDataset(params.dataset_folder, params.val_file)
+            datasets['val'] = WildCrossTrainingDataset(params.dataset_folder, params.val_file)
 
     return datasets
 

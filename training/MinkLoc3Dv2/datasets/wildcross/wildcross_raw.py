@@ -2,7 +2,7 @@ import os
 import numpy as np 
 from datasets.base_datasets import PointCloudLoader
 
-class WildPlacesPointCloudLoader(PointCloudLoader):
+class WildCrossPointCloudLoader(PointCloudLoader):
     def set_properties(self):
         self.remove_zero_points = False
         self.remove_ground_plane = False
