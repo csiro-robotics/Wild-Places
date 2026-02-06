@@ -64,6 +64,7 @@ Here we provided pre-trained checkpoints and results for benchmarking several st
 ||Split 3|[Download](https://huggingface.co/CSIRORobotics/WildCross/resolve/main/LPR/HotFormerLoc/split_2.pth)|
 ||Split 4|[Download](https://huggingface.co/CSIRORobotics/WildCross/resolve/main/LPR/HotFormerLoc/split_3.pth)|
 
+**Note**: In this codebase, the crossfold dataset splits are 0-indexed (*e.g.* split 0, 1, 2, 3) - while in the paper they are 1-indexed as above (e. split 1, 2, 3, 4). Keep this in mind as the naming convention of the weights file will follow codebase indexing. 
 
 ### Performance
 ![](./utils/docs/wildcross_intra_sequence_table.png)
