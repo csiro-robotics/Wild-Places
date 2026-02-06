@@ -1,4 +1,4 @@
-# Wild-Places: A Large-Scale Dataset for Lidar Place Recognition in Unstructured Natural Environments
+# WildCross: A Cross-Modal Large Scale Benchmark for Place Recognition and Metric Depth Estimation in Natural Environments
 <!-- ## [Website](https://csiro-robotics.github.io/Wild-Places/) | [Paper](https://arxiv.org/abs/2211.12732) | [Data Download Portal](https://data.csiro.au/collection/csiro:56372?q=wild-places&_st=keyword&_str=1&_si=1) -->
 ![](./utils/docs/teaser.png)
 <div align="center">
