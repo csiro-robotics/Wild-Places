@@ -130,12 +130,51 @@ python minkloc_inter_sequence_wildcross.py \
 #### __Intra-run Evaluation__
 ```
 python minkloc_intra_sequence_wildcross.py \
-    --test_pickle_files /pickle/save/dir/venman_testing_info.pickle /pickle/save/dir/karawatha_testing_info.pickle \
+    --test_pickle_files ../generate_splits/venman_testing_info.pickle ../generate_splits/karawatha_testing_info.pickle \
     --location_names Venman Karawatha \
-    --save_dir /path/to/results/save/dir \
-    --split_idx CROSSFOLD_SPLIT_IDX \
-    --ckpt /path/to/pretrained/ckpt.pth \
-    --dataset_root /path/to/wildcross/root \
-    --config /MinkLoc3Dv2/save/dir/configs/config_wildplaces.txt \
-    --model_config /MinkLoc3Dv2/save/dir/configs/model_wildplaces.txt
+    --save_dir $_PATH_TO_SAVE_EVAL_RESULTS \
+    --split_idx _SPLIT_IDX \
+    --ckpt $_PATH_TO_MODEL_CHECKPOINT \
+    --dataset_root $_PATH_TO_WILDCROSS_DATABASE \
+    --config $MINKLOC_PATH/configs/config_wildplaces.txt \
+    --model_config $MINKLOC_PATH/configs/model_wildplaces.txt
 ```
+
+### HOTFormerLoc
+The following evaluation procedure assumes that you have set up HOTFormerLoc according to the instructions in the `training/HOTFormerLoc` folder of this repository and are operating in a python evnironment able to support HOTFormerLoc code.
+To run evaluation with HOTFormerLoc, first run the following commands.
+```
+HOTFORMERLOC_PATH=/path/to/HOTFormerLoc
+export PYTHONPATH=$HOTFORMERLOC_PATH:$PYTHONPATH
+```
+Then, run the following commands out of the `eval/HOTFormerLoc` folder for inter and intra-sequence evaluation respectively.
+
+**Note** this assumes you generated the splits as described at the beginning of the README.
+
+#### __Inter-run Evaluation__
+```
+python hotformerloc_inter_sequence_wildcross.py \
+    --test_pickle_files ../generate_splits/venman_testing_info.pickle ../generate_splits/karawatha_testing_info.pickle \
+    --location_names Venman Karawatha \
+    --save_dir $_PATH_TO_SAVE_EVAL_RESULTS \
+    --split_idx _SPLIT_IDX \
+    --ckpt $_PATH_TO_MODEL_CHECKPOINT \
+    --dataset_root $_PATH_TO_WILDCROSS_DATABASE \
+    --config $HOTFORMERLOC_PATH/configs/config_wildcross.txt \
+    --model_config $HOTFORMERLOC_PATH/models/model_wildcross.txt
+```
+
+#### __Intra-run Evaluation__
+```
+python hotformerloc_intra_sequence_wildcross.py \
+    --test_pickle_files ../generate_splits/venman_testing_info.pickle ../generate_splits/karawatha_testing_info.pickle \
+    --location_names Venman Karawatha \
+    --save_dir $_PATH_TO_SAVE_EVAL_RESULTS \
+    --split_idx _SPLIT_IDX \
+    --ckpt $_PATH_TO_MODEL_CHECKPOINT \
+    --dataset_root $_PATH_TO_WILDCROSS_DATABASE \
+    --config $HOTFORMERLOC_PATH/configs/config_wildcross.txt \
+    --model_config $HOTFORMERLOC_PATH/models/model_wildcross.txt
+```
+
+Note that you can adjust the `val_batch_size` and `num_workers` in the `config_wildcross.txt` file to suit your system (necessary if you receive a CUDA out of memory error). Be aware that adjusting `val_batch_size` may slightly alter results due to the octree batch construction process.
