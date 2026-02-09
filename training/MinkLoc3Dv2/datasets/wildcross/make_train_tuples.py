@@ -108,6 +108,6 @@ if __name__ == '__main__':
         print(f"Total: {df_train} Training Submaps")
         
         construct_query_dict(df_train, filepaths_train,
-                            os.path.join(args.save_folder, f"training_wildcross_split_idx{split_idx}.pickle"),
+                            os.path.join(args.save_folder, f"training_wildcross_split_idx{split_idx+1}.pickle"),
                             ind_nn_r=args.pos_thresh, ind_r_r=args.neg_thresh)
         
