@@ -29,7 +29,7 @@ Secondly, we need to generate the pickle file containing the training splits.  T
  _NGPU=4
  _WILDCROSS_ROOT=/path/to/wildcross
  _SAVE_DIRECTORY=/path/to/savedir
- _SPLIT_IDX=0 # Change this depending on the train / testing split you're using 
+ _SPLIT_IDX=1 # Change this depending on the train / testing split you're using
 
 cd /path/to/LoGG3D-Net
 
@@ -47,4 +47,7 @@ torchpack dist-run -np ${_NGPU} python training/train.py \
     --collation_type 'reg_sparse_tuple' \
     --out_dir $_SAVE_DIRECTORY$ \
  ```
+
+**Note**: As in the paper, here we use 1-indexing such that `split_idx 1` means that V-01 and K-01 are held out for evaluation and the rest of the data is used for training.
+
  **Note**: We train LoGG3D-Net using four GPUS and 18 negative examples per query.  Depending on your available resources you may want to change these values; however, expect performance to drop if the number of GPUS or negatives is reduced.
