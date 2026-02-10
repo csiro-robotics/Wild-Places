@@ -107,7 +107,7 @@ class Evaluator:
     def get_descriptors_positions(self):
         all_sequence_info = []
         for idx in range(len(self.env_data)):
-            print(f"Sequence {idx}")
+            print(f"Sequence {idx+1}")
             seq_name = self.env_data[idx][0]['seq_name']
             descriptors = self.get_latent_vectors(self.env_data[idx], seq_name, debug=self.debug)
             positions = self.get_positions(self.env_data[idx])

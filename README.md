@@ -51,20 +51,20 @@ Here we provided pre-trained checkpoints and results for benchmarking several st
 
 | Model | Split | Link |
 |:-|:-|:-:|
-|LoGG3D-Net|Split 1|[Download](https://huggingface.co/CSIRORobotics/WildCross/resolve/main/LPR/LoGG3DNet/split_0.pth)|
-||Split 2|[Download](https://huggingface.co/CSIRORobotics/WildCross/resolve/main/LPR/LoGG3DNet/split_1.pth)|
-||Split 3|[Download](https://huggingface.co/CSIRORobotics/WildCross/resolve/main/LPR/LoGG3DNet/split_2.pth)|
-||Split 4|[Download](https://huggingface.co/CSIRORobotics/WildCross/resolve/main/LPR/LoGG3DNet/split_3.pth)|
-|MinkLoc3Dv2|Split 1|[Download](https://huggingface.co/CSIRORobotics/WildCross/resolve/main/LPR/MinkLoc3Dv2/split_0.pth)|
-||Split 2|[Download](https://huggingface.co/CSIRORobotics/WildCross/resolve/main/LPR/MinkLoc3Dv2/split_1.pth)|
-||Split 3|[Download](https://huggingface.co/CSIRORobotics/WildCross/resolve/main/LPR/MinkLoc3Dv2/split_2.pth)|
-||Split 4|[Download](https://huggingface.co/CSIRORobotics/WildCross/resolve/main/LPR/MinkLoc3Dv2/split_3.pth)|
-|HOTFormerLoc|Split 1|[Download](https://huggingface.co/CSIRORobotics/WildCross/resolve/main/LPR/HotFormerLoc/split_0.pth)|
-||Split 2|[Download](https://huggingface.co/CSIRORobotics/WildCross/resolve/main/LPR/HotFormerLoc/split_1.pth)|
-||Split 3|[Download](https://huggingface.co/CSIRORobotics/WildCross/resolve/main/LPR/HotFormerLoc/split_2.pth)|
-||Split 4|[Download](https://huggingface.co/CSIRORobotics/WildCross/resolve/main/LPR/HotFormerLoc/split_3.pth)|
+|LoGG3D-Net|Split 1|[Download](https://huggingface.co/CSIRORobotics/WildCross/resolve/main/LPR/LoGG3DNet/split_1.pth)|
+||Split 2|[Download](https://huggingface.co/CSIRORobotics/WildCross/resolve/main/LPR/LoGG3DNet/split_2.pth)|
+||Split 3|[Download](https://huggingface.co/CSIRORobotics/WildCross/resolve/main/LPR/LoGG3DNet/split_3.pth)|
+||Split 4|[Download](https://huggingface.co/CSIRORobotics/WildCross/resolve/main/LPR/LoGG3DNet/split_4.pth)|
+|MinkLoc3Dv2|Split 1|[Download](https://huggingface.co/CSIRORobotics/WildCross/resolve/main/LPR/MinkLoc3Dv2/split_1.pth)|
+||Split 2|[Download](https://huggingface.co/CSIRORobotics/WildCross/resolve/main/LPR/MinkLoc3Dv2/split_2.pth)|
+||Split 3|[Download](https://huggingface.co/CSIRORobotics/WildCross/resolve/main/LPR/MinkLoc3Dv2/split_3.pth)|
+||Split 4|[Download](https://huggingface.co/CSIRORobotics/WildCross/resolve/main/LPR/MinkLoc3Dv2/split_4.pth)|
+|HOTFormerLoc|Split 1|[Download](https://huggingface.co/CSIRORobotics/WildCross/resolve/main/LPR/HotFormerLoc/split_1.pth)|
+||Split 2|[Download](https://huggingface.co/CSIRORobotics/WildCross/resolve/main/LPR/HotFormerLoc/split_2.pth)|
+||Split 3|[Download](https://huggingface.co/CSIRORobotics/WildCross/resolve/main/LPR/HotFormerLoc/split_3.pth)|
+||Split 4|[Download](https://huggingface.co/CSIRORobotics/WildCross/resolve/main/LPR/HotFormerLoc/split_4.pth)|
 
-**Note**: In this codebase, the crossfold dataset splits are 0-indexed (*e.g.* split 0, 1, 2, 3) - while in the paper they are 1-indexed as above (*e.g.* split 1, 2, 3, 4). Keep this in mind as the naming convention of the weights file will follow codebase indexing. 
+**Note**: As in the paper, here we use 1-indexing such that `split_idx 1` means that V-01 and K-01 are held out for evaluation and the rest of the data is used for training.
 
 ### Performance
 ![](./utils/docs/wildcross_intra_sequence_table.png)
