@@ -123,7 +123,7 @@ class Evaluator:
 
 
         all_sequences_data = self.get_descriptors_positions()
-        query_data = all_sequences_data.pop(self.split_idx)
+        query_data = all_sequences_data.pop(self.split_idx-1)
         df_results = pd.DataFrame(columns = [f"R@{n}" for n in self.recall_values])
         
         for db_data in all_sequences_data:

@@ -57,7 +57,7 @@ if __name__ == '__main__':
     parser.add_argument('--save_dir', type=str, required=True)
     parser.add_argument('--pos_thresh', type=float, default=3)
     parser.add_argument('--neg_thresh', type=float, default=20)
-    parser.add_argument('--query_idx', type=int, required=True)
+    parser.add_argument('--split_idx', type=int, required=True)
     args = parser.parse_args()
     
     assert os.path.exists(args.root), f"Cannot access dataset root folder: {args.root}"
@@ -70,7 +70,7 @@ if __name__ == '__main__':
     
     # Venman 
     venman_seqs = ['V-01','V-02','V-03','V-04']
-    venman_seqs.pop(args.query_idx)
+    venman_seqs.pop(args.split_idx)
     df_venman = pd.concat([
         pd.read_csv(os.path.join(args.root, seq, 'submap_poses.csv'))
         for seq in venman_seqs], axis=0
@@ -84,7 +84,7 @@ if __name__ == '__main__':
     
     # Karawatha 
     karawatha_seqs = ['K-01','K-02','K-03','K-04']
-    karawatha_seqs.pop(args.query_idx)
+    karawatha_seqs.pop(args.split_idx)
     df_karawatha = pd.concat([
         pd.read_csv(os.path.join(args.root, seq, 'submap_poses.csv'))
         for seq in karawatha_seqs], axis=0
@@ -106,7 +106,7 @@ if __name__ == '__main__':
     print(f"Total: {df_train} Training Submaps")
     
     construct_query_dict(df_train, filepaths_train,
-                         os.path.join(args.save_dir, f"training_wildcross_qidx{args.query_idx}.pickle"),
+                         os.path.join(args.save_dir, f"training_wildcross_qidx{args.split_idx +1}.pickle"),
                          ind_nn_r=args.pos_thresh, ind_r_r=args.neg_thresh)
     
     

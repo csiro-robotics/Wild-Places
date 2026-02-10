@@ -107,7 +107,7 @@ class Evaluator:
     def get_descriptors_positions(self):
         all_sequence_info = []
         for idx in range(len(self.env_data)):
-            print(f"Sequence {idx}")
+            print(f"Sequence {idx+1}")
             seq_name = self.env_data[idx][0]['seq_name']
             descriptors = self.get_latent_vectors(self.env_data[idx], seq_name, debug=self.debug)
             positions = self.get_positions(self.env_data[idx])
@@ -124,7 +124,7 @@ class Evaluator:
 
         print("calculating descriptors and positions")
         all_sequences_data = self.get_descriptors_positions()
-        query_data = all_sequences_data.pop(self.split_idx)
+        query_data = all_sequences_data.pop(self.split_idx-1)
         df_results = pd.DataFrame(columns = [f"R@{n}" for n in self.recall_values])
         
         for db_data in tqdm(all_sequences_data, "calc recalls", len(all_sequences_data)):

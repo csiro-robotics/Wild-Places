@@ -1,5 +1,5 @@
 # Training on HOTFormerLoc
-This folder contains the code needed to train HOTFormerLoc on the Wild-Places dataset
+This folder contains the code needed to train HOTFormerLoc on the WildCross dataset
 
 **Note: If you are reading this, you are on the WildCross branch and will be using the WildCross crossfold training splits.  Make sure that this is what you want!**
 
