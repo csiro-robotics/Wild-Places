@@ -14,7 +14,13 @@ This should generate a number of pickle files which contain the necessary inform
 
 ## Running evaluation
 We provide scripts for running inter and intra-sequence evaluation on WildCross.
-This comprises both generalised evaluation scripts (for custom methods) as well as scripts designed to replicate our evaluation process for for LoGG3D-Net and MinkLoc3Dv2.
+This comprises both generalised evaluation scripts (for custom methods) as well as scripts designed to replicate our evaluation process for for LoGG3D-Net, MinkLoc3Dv2, and HOTFormerLoc.
+
+If you save all evaluation outputs for inter-sequence evaluation into a single folder, you can also get the crossfold average results by calling:
+
+```
+python eval/get_crossfold_averages.py --root_dir /path/to/evaluation/outputs
+```
 
 ### Generalised Evaluation Process
 We provide the template for a generic evaluation script for inter and intra-sequence place recognition.  
@@ -51,7 +57,7 @@ Where:
 - `_PATH_TO_WILDCROSS_DATABASE` is a string pointing to the location of the WildCross dataset
 
 #### __Intra-run Evaluation__
-To perform intra-run evaluation on the Wild-Places dataset, run the following command:
+To perform intra-run evaluation on the WildCross dataset, run the following command:
 ```
 python eval/intra-sequence-wildcross.py \
     --test_pickle_files $_PATH_TO_TEST_PICKLE_FILES \
@@ -123,8 +129,8 @@ python minkloc_inter_sequence_wildcross.py \
     --split_idx _SPLIT_IDX \
     --ckpt $_PATH_TO_MODEL_CHECKPOINT \
     --dataset_root $_PATH_TO_WILDCROSS_DATABASE \
-    --config $MINKLOC_PATH/configs/config_wildplaces.txt \
-    --model_config $MINKLOC_PATH/configs/model_wildplaces.txt
+    --config $MINKLOC_PATH/configs/config_wildcross.txt \
+    --model_config $MINKLOC_PATH/configs/model_wildcross.txt
 ```
 
 #### __Intra-run Evaluation__
@@ -136,8 +142,8 @@ python minkloc_intra_sequence_wildcross.py \
     --split_idx _SPLIT_IDX \
     --ckpt $_PATH_TO_MODEL_CHECKPOINT \
     --dataset_root $_PATH_TO_WILDCROSS_DATABASE \
-    --config $MINKLOC_PATH/configs/config_wildplaces.txt \
-    --model_config $MINKLOC_PATH/configs/model_wildplaces.txt
+    --config $MINKLOC_PATH/configs/config_wildcross.txt \
+    --model_config $MINKLOC_PATH/configs/model_wildcross.txt
 ```
 
 ### HOTFormerLoc

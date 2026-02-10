@@ -6,12 +6,12 @@ import torchvision.transforms as transforms
 
 from datasets.augmentation import JitterPoints, RemoveRandomPoints, RandomTranslation, RemoveRandomBlock
 from datasets.base_datasets import TrainingDataset
-from datasets.wildplaces.wildplaces_raw import WildPlacesPointCloudLoader
+from datasets.wildcross.wildcross_raw import WildCrossPointCloudLoader
 
-class WildPlacesTrainingDataset(TrainingDataset):
+class WildCrossTrainingDataset(TrainingDataset):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.pc_loader = WildPlacesPointCloudLoader()
+        self.pc_loader = WildCrossPointCloudLoader()
         
 class TrainTransform:
     # Augmentations specific for PointNetVLAD datasets (RobotCar and Inhouse)

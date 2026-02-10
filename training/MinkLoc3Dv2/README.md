@@ -1,5 +1,5 @@
 # Training on MinkLoc3Dv2
-This folder contains the code needed to train MinkLoc3Dv2 on the Wild-Places dataset
+This folder contains the code needed to train MinkLoc3Dv2 on the WildCross dataset
 
 **Note: If you are reading this, you are on the WildCross branch and will be using the WildCross crossfold training splits.  Make sure that this is what you want!**
 
@@ -18,12 +18,12 @@ Secondly, we need to generate the pickle file containing the training splits.  T
 ```
  cd /path/to/MinkLoc3Dv2
  export PYTHONPATH=$PWD:$PYTHONPATH 
- python datasets/wildplaces/make_train_tuples_wildcross.py \
+ python datasets/wildcross/make_train_tuples.py \
     --dataset_root /path/to/wildcross/root \
     --save_folder pickles 
  ```
 
- In addition, edit the file `configs/config_wildplaces.txt` so that `dataset_folder` is set to the path to Wild-Places on your machine and `train_file` is set to the path to a pickle file generated above.
+ In addition, edit the file `configs/config_wildcross.txt` so that `dataset_folder` is set to the path to WildCross on your machine and `train_file` is set to the path to a pickle file generated above.
 
  ## 3. Train
  Now you should be ready to train the network by running `train.py` as follows:
@@ -32,7 +32,7 @@ cd /path/to/MinkLoc3Dv2
 export PYTHONPATH=$PWD:$PYTHONPATH
 
 python training/train.py \
-    --config configs/config_wildplaces.txt \
-    --model_config configs/model_wildplaces.txt \
+    --config configs/config_wildcross.txt \
+    --model_config configs/model_wildcross.txt \
     --save_folder /path/to/savedir
 ```

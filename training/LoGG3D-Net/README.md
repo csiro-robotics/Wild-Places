@@ -35,9 +35,9 @@ cd /path/to/LoGG3D-Net
 
 torchpack dist-run -np ${_NGPU} python training/train.py \
     --train_pipeline 'LOGG3D' \
-    --dataset wildplaces \
+    --dataset wildcross \
     --train_pickles pickles/training_wildcross_split_idx${_SPLIT_IDX}.pickle \
-    --wildplaces_dir $_WILDCROSS_ROOT \
+    --wildcross_dir $_WILDCROSS_ROOT \
     --gp_rem False \
     --train_num_workers 6 \
     --negatives_per_query 18 \

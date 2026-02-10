@@ -4,7 +4,6 @@
 
 import numpy as np
 from datasets.base_datasets import TrainingDataset
-from datasets.CSWildPlaces.CSWildPlaces_raw import CSWildPlacesPointCloudLoader
 
 import os 
 from datasets.base_datasets import PointCloudLoader

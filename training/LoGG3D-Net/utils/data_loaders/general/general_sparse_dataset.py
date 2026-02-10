@@ -41,7 +41,7 @@ class GeneralSparseTupleDataset(GeneralTupleDataset):
         if dataset == 'ugv' or dataset == 'apollo' or dataset == 'bushwalk':
             pcd = o3d.io.read_point_cloud(fname) # TODO: add numpy load, conditional
             
-        if dataset == 'mulran' or dataset == 'kitti' or dataset == 'wildplaces':
+        if dataset == 'mulran' or dataset == 'kitti' or dataset == 'wildcross':
             xyzr = np.fromfile(fname, dtype=np.float32).reshape(-1, 4)
             pcd = make_open3d_point_cloud(xyzr[:, :3], color=None)
             
