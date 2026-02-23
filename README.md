@@ -15,14 +15,12 @@ This branch contains the code implementation used for LPR training and evaluatio
 
 If you find this dataset helpful for your research, please cite our paper using the following reference:
 ```
-@misc{knights2025wildcross,
+@inproceedings{wildcross2026,
   title={{WildCross: A Cross-Modal Large Scale Benchmark for Place Recognition and Metric Depth Estimation in Natural Environments}},
-  author={Joshua Knights, Joseph Reid, Mark Cox, Kaushik Roy, David Hall, Peyman Moghadam},
-  year={2025},
-  eprint={xxxxxxxxx},
-  archivePrefix={arXiv},
-  primaryClass={cs.CV},
-  url={https://arxiv.org/abs/xxxxxxxxxx},
+  author={Joshua Knights, Joseph Reid, Kaushik Roy, David Hall, Mark Cox, Peyman Moghadam},
+  booktitle={Proceedings-IEEE International Conference on Robotics and Automation},
+  pages={},
+  year={2026}
 }
 ```
 
