@@ -2,10 +2,10 @@
 <!-- ## [Website](https://csiro-robotics.github.io/Wild-Places/) | [Paper](https://arxiv.org/abs/2211.12732) | [Data Download Portal](https://data.csiro.au/collection/csiro:56372?q=wild-places&_st=keyword&_str=1&_si=1) -->
 ![](./utils/docs/teaser.png)
 <div align="center">
-<a href=""><img src='https://img.shields.io/badge/arXiv-Wild Cross-red' alt='Paper PDF'></a>
+<a href="https://arxiv.org/pdf/2603.01475"><img src='https://img.shields.io/badge/arXiv-Wild Cross-red' alt='Paper PDF'></a>
 <a href='https://csiro-robotics.github.io/WildCross'><img src='https://img.shields.io/badge/Project_Page-WildCross-green' alt='Project Page'></a>
 <a href='https://huggingface.co/CSIRORobotics/WildCross'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Checkpoints-yellow'></a>
-<a href=''><img src='https://img.shields.io/badge/Download-WildCross-blue' alt='Project Page'></a>
+<a href='https://doi.org/10.25919/5fmy-yg37'><img src='https://img.shields.io/badge/Download-WildCross-blue' alt='Project Page'></a>
 </div>
 
 
